@@ -1,0 +1,4 @@
+baseURL = 'https://www.louisestrawbridge.com/'
+languageCode = 'en-us'
+title = 'Louise Strawbridge Artist Portfolio'
+theme = 'PaperMod'
