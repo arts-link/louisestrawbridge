@@ -1,13 +1,16 @@
 baseURL = 'https://www.louisestrawbridge.com/'
 languageCode = 'en-us'
 title = 'Louise Strawbridge Artist Portfolio'
-theme = 'PaperMod'
+theme = ['PaperMod']
 [Params]
 #  label.icon = '/images/louisestrawbridge.png'
   label.text = 'Louise Strawbridge'
   disableThemeToggle = true
   defaultTheme = 'light'
-  comingSoon = true
+  # comingSoon = true
+  # profileMode = true
+  mainSections = ['gallery']
+
 [menu]
 [[menu.main]]
     name = 'Home'
@@ -15,7 +18,7 @@ theme = 'PaperMod'
     weight = 10
 [[menu.main]]
     name = 'Work'
-    url = '/work/'
+    url = '/gallery/'
     weight = 20
 [[menu.main]]
     name = 'Resume'

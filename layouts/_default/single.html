@@ -1,5 +1,4 @@
 {{- define "main" }}
-main single
 <article class="post-single">
   <header class="post-header">
     {{ partial "breadcrumbs.html" . }}
@@ -34,7 +33,9 @@ main single
     {{- else }}{{ .Content }}{{ end }}
   </div>
   {{- end }}
-
+  
+  {{- partial "page_gallery.html" . -}}
+  
   <footer class="post-footer">
     {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
     <ul class="post-tags">
