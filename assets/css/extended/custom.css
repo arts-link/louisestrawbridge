@@ -2,3 +2,12 @@ body {
     /* Set the background image URL */
     background-image: url('/images/img_bg.jpg') !important;
 }
+
+.nav, .logo, .post-title, .page-header, .entry-header, figcaption { 
+    font-family: 'my_underwoodregular', Arial, sans-serif; 
+}
+
+.post-content figure>figcaption>p {
+    font-size: 1.4em;
+    text-align: center;
+}  
