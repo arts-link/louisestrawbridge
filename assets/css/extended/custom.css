@@ -2,8 +2,12 @@ body {
     /* Set the background image URL */
     background-image: url('/images/img_bg.jpg') !important;
 }
+body.dark {
+    /* Set the background image URL */
+    background-image: url('/images/img_dark_bg.png') !important;
+}
 
-.nav, .logo, .post-title, .page-header, .entry-header, figcaption { 
+body, .nav, .logo, .post-title, .page-header, .entry-header, figcaption { 
     font-family: 'my_underwoodregular', Arial, sans-serif; 
 }
 
@@ -11,3 +15,80 @@ body {
     font-size: 1.4em;
     text-align: center;
 }  
+
+.header, .footer {
+    background-image: url('/images/img_banner_bg_signature.png') !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; /* Scale the image to fit within the container */
+    /* position: relative;
+    overflow: hidden; */
+}
+.main {
+    /* display: flex;
+    justify-content: center;
+    gap: 20px; Adjust the gap between the post-entry boxes */
+  }
+.post-entry {
+    width: 30%;
+    float: left;
+    margin: 5px;
+    padding: 10px;
+}
+.post-entry::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.fj-gallery {
+    position: relative;
+    overflow: hidden;
+  }
+  .fj-gallery::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .fj-gallery .fj-gallery-item {
+    float: left;
+    top: 0;
+    left: 0;
+  }
+  .fj-gallery .fj-gallery-item > img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+
+  /* Add this to your CSS file or create a new stylesheet */
+
+#overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.9);
+    z-index: 999;
+  }
+  
+  #overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #close-overlay {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,24 @@
+<!-- layouts/partials/overlay.html -->
+
+<div id="overlay">
+    <div id="overlay-content">
+      <button id="close-overlay">Close</button>
+      <!-- Add any other content you want in the overlay here -->
+      Christmastime is here!
+    </div>
+  </div>
+  
+  <script>
+    document.getElementById('close-overlay').addEventListener('click', function() {
+      document.getElementById('overlay').style.display = 'none';
+      document.cookie = 'overlayClosed=true; path=/'; // Set a session cookie
+    });
+  
+    // Check for the session cookie before displaying the overlay
+    window.addEventListener('load', function() {
+      if (document.cookie.indexOf('overlayClosed=true') === -1) {
+        document.getElementById('overlay').style.display = 'block';
+      }
+    });
+  </script>
+  

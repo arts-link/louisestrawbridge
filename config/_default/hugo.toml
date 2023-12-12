@@ -5,17 +5,13 @@ theme = ['PaperMod']
 [Params]
 #  label.icon = '/images/louisestrawbridge.png'
   label.text = 'Louise Strawbridge'
-  disableThemeToggle = true
+  # disableThemeToggle = true
   defaultTheme = 'light'
-  # comingSoon = true
+#   comingSoon = true
   # profileMode = true
   mainSections = ['gallery']
 
 [menu]
-[[menu.main]]
-    name = 'Home'
-    url = '/'
-    weight = 10
 [[menu.main]]
     name = 'Work'
     url = '/gallery/'

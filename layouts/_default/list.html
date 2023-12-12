@@ -1,4 +1,6 @@
+
 {{- define "main" }}
+{{ partial "overlay.html" . }}
 {{- if (and site.Params.profileMode.enabled .IsHome) }}
 {{- partial "index_profile.html" . }}
 {{- else }} {{/* if not profileMode */}}
@@ -37,20 +39,22 @@
 </div>
 {{- end }}
 
+
 {{- $pages := union .RegularPages .Sections }}
 
 {{- if .IsHome }}
 {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true"  }}
 {{- end }}
-{{- $showList := true }}
+
+{{- $showPages := true }}
 {{- if site.Params.comingSoon }}
     {{- if .IsHome }}
-        {{- $showList = false }}
+        {{- $showPages = false }}
     {{- end }}  
 {{- end }}
 
-{{- if $showList }}
+{{- if $showPages }}
 {{- $paginator := .Paginate $pages }}
 
 {{- if and .IsHome site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
@@ -120,3 +124,4 @@
 {{- end }}{{/* end profileMode */}}
 
 {{- end }}{{- /* end main */ -}}
+
