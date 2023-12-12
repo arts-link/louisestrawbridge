@@ -1,6 +1,5 @@
 
 {{- define "main" }}
-{{ partial "overlay.html" . }}
 {{- if (and site.Params.profileMode.enabled .IsHome) }}
 {{- partial "index_profile.html" . }}
 {{- else }} {{/* if not profileMode */}}
