@@ -68,13 +68,13 @@ body, .nav, .logo, .post-title, .page-header, .entry-header, figcaption {
   */
 
   .header {
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     align-items: center;
   }
   
   .nav {
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
   }
@@ -83,11 +83,11 @@ body, .nav, .logo, .post-title, .page-header, .entry-header, figcaption {
     margin-bottom: 10px; /* Optional: Add some space between logo and menu */
   }
   
-  #menu {
+  /* #menu {
     list-style: none;
     padding: 0;
     display: flex;
-  }
+  } */
   
   #menu li {
     margin: 0 10px; /* Optional: Add some space between menu items */
