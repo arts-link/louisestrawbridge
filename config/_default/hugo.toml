@@ -1,7 +1,7 @@
 baseURL = 'https://www.louisestrawbridge.com/'
 languageCode = 'en-us'
 title = 'Louise Strawbridge Artist Portfolio - Dev'
-theme = ['PaperModX']
+theme = ['PaperMod']
 [Params]
 #  label.icon = '/images/louisestrawbridge.png'
   label.text = 'Louise Strawbridge'
