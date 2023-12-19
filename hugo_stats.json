@@ -3,9 +3,11 @@
     "tags": [
       "a",
       "body",
+      "br",
       "button",
       "div",
       "footer",
+      "g",
       "h1",
       "h2",
       "h3",
@@ -31,6 +33,7 @@
       "-me-4",
       "-ms-4",
       "3xl:grid-cols-5",
+      "align-middle",
       "antialiased",
       "aspect-[3/2]",
       "bg-neutral-100",
@@ -104,6 +107,8 @@
       "py-4",
       "py-5",
       "rounded-2xl",
+      "signature",
+      "signaturemx-auto",
       "sm:grid-cols-2",
       "sm:px-6",
       "sm:text-5xl",
@@ -128,9 +133,14 @@
       "2019",
       "2020",
       "2022",
+      "Capa_1",
       "biography",
+      "christmas-present",
+      "close-overlay",
       "gallery-shows",
       "links",
+      "overlay",
+      "overlay-content",
       "selected-group-exhibitions"
     ]
   }
