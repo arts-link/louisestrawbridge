@@ -66,34 +66,6 @@ timeZone = "Europe/Berlin"
     target = "$1"
 
 [menu]
-# [[menu.footer]]
-#   name = "GitHub"
-#   url = "https://github.com/nicokaiser/hugo-theme-gallery/"
-#   weight = 3
-# [[menu.main]]
-#     identifier = "work"
-#     name = 'Work'
-#     url = '/gallery/'
-#     weight = 20
-  
-[[menu.main]]
-    identifier = 'assemblage'
-    name = 'Assemblage'
-    url = '/assemblage/'
-    parent = 'work'
-    weight = 21
-[[menu.main]]
-    identifier = 'artistsbooks'
-    name = "Artist's Books"
-    url = '/artistsbooks/'
-    parent = 'work'
-    weight = 22
-[[menu.main]]
-    identifier = 'collage'
-    name = 'Collage'
-    url = '/collage/'
-    parent = 'work'
-    weight = 23
 [[menu.main]]
     name = 'Resume'
     url = '/resume/'
@@ -106,3 +78,18 @@ timeZone = "Europe/Berlin"
     name = 'Contact'
     url = '/contact/'
     weight = 50
+# [[menu.main]]
+#     identifier = 'assemblage'
+#     name = 'Assemblage'
+#     url = '/assemblage/'
+#     weight = 21
+# [[menu.main]]
+#     identifier = 'artistsbooks'
+#     name = "Artist's Books"
+#     url = '/artistsbooks/'
+#     weight = 22
+# [[menu.main]]
+#     identifier = 'collage'
+#     name = 'Collage'
+#     url = '/collage/'
+#     weight = 23
