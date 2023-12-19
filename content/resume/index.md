@@ -10,20 +10,20 @@ layout = 'page'
 
 #### 2022   
 
-- Texture / Intuition, Stanek Gallery, USA   
-- Summer Select, Stanek Gallery, USA   
+- Texture / Intuition, [Stanek Gallery](https://www.artsy.net/partner/stanek-gallery/artists/louise-strawbridge), USA   
+- Summer Select, [Stanek Gallery](https://www.artsy.net/partner/stanek-gallery/artists/louise-strawbridge), USA   
 
 #### 2020
 
-- Jacqueline Boyd & Louise Strawbridge: All Shall Be Well, Stanek Gallery, USA  
+- Jacqueline Boyd & Louise Strawbridge: All Shall Be Well, [Stanek Gallery](https://www.artsy.net/partner/stanek-gallery/artists/louise-strawbridge), USA  
 
 #### 2019
 
-- Unbound: Works in Paper, Stanek Gallery, USA  
+- Unbound: Works in Paper, [Stanek Gallery](https://www.artsy.net/partner/stanek-gallery/artists/louise-strawbridge), USA  
 
 #### 2018
 
-- Pure abstraction, Stanek Gallery, USA  
+- Pure abstraction, [Stanek Gallery](https://www.artsy.net/partner/stanek-gallery/artists/louise-strawbridge), USA  
 
 #### 2017
 

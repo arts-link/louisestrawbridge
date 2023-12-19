@@ -2,7 +2,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     {{ if .IsHome -}}
-      <title>FOO{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+      <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
     {{- else -}}
       <title>{{ .Title }} – {{ .Site.Title }}</title>
     {{- end }}
@@ -10,7 +10,7 @@
     <link rel="icon" type="image/svg+xml" href="{{ "images/favicon.svg" | relURL }}" />
     <link rel="icon" type="image/png" href="{{ "images/favicon.png" | relURL }}" />
     <link rel="apple-touch-icon" sizes="180x180" href="{{ "images/apple-touch-icon.png" | relURL }}" />
-    <link rel="preload" href="/fonts/InterVariable.woff2" as="font" type="font/woff2"  crossorigin="anonymous" integrity="sha256-ive9W1RVZ63/s9/Otb7bNTpSLXvxs6K4r3tgZBVrq8A=" />
+    {{/*  <link rel="preload" href="/fonts/InterVariable.woff2" as="font" type="font/woff2"  crossorigin="anonymous" integrity="sha256-ive9W1RVZ63/s9/Otb7bNTpSLXvxs6K4r3tgZBVrq8A=" />  */}}
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}" />
     {{ hugo.Generator }}
     {{ if .Params.private }}
@@ -20,10 +20,11 @@
       {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
     {{ partial "opengraph.html" . }}
-    {{ $extended := (resources.Match "css/extended/*.css") | resources.Concat "assets/css/extended.css" | resources.Minify }}
-    {{ $css := resources.Get "/css/styles.css" | resources.PostCSS (dict "inlineImports" true) | resources.Minify | resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
-    <link rel="stylesheet" href="{{ $extended.RelPermalink }}" />
+    {{/*  include any css files in site root/assets/css  */}}
+    {{ $extended := (resources.Match "css/extended/*.css") | resources.Concat "assets/css/extended.css" }}
+    {{ $css := resources.Get "/css/styles.css" | resources.PostCSS (dict "inlineImports" true) }}
+    {{ $mergedCss := slice $extended $css | resources.Concat "css/merged.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $mergedCss.RelPermalink }}" />
     {{ $js := resources.Get "js/main.js" | js.Build (dict "minify" true) | resources.Fingerprint }}
     <script src="{{ $js.RelPermalink }}" defer></script>
   </head>
