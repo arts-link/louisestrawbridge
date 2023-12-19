@@ -1,6 +1,6 @@
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     {{ if .IsHome -}}
       <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
     {{- else -}}
@@ -10,7 +10,8 @@
     <link rel="icon" type="image/svg+xml" href="{{ "images/favicon.svg" | relURL }}" />
     <link rel="icon" type="image/png" href="{{ "images/favicon.png" | relURL }}" />
     <link rel="apple-touch-icon" sizes="180x180" href="{{ "images/apple-touch-icon.png" | relURL }}" />
-    {{/*  <link rel="preload" href="/fonts/InterVariable.woff2" as="font" type="font/woff2"  crossorigin="anonymous" integrity="sha256-ive9W1RVZ63/s9/Otb7bNTpSLXvxs6K4r3tgZBVrq8A=" />  */}}
+    <link rel="preload" href="/fonts/InterVariable.woff2" as="font" type="font/woff2"  crossorigin="anonymous" integrity="sha256-ive9W1RVZ63/s9/Otb7bNTpSLXvxs6K4r3tgZBVrq8A=" />
+    <link rel="preload" href="/images/fonts/myunderwood-webfont.woff" as="font" type="font/woff"  crossorigin="anonymous" integrity="sha256-ive9W1RVZ63/s9/Otb7bNTpSLXvxs6K4r3tgZBVrq8A=" />
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}" />
     {{ hugo.Generator }}
     {{ if .Params.private }}
