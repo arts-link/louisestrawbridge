@@ -3,6 +3,7 @@
 /resources/
 /themes/*/exampleSite/
 *.log
+/_ignore/
 
 # frontmatter
 .frontmatter/
