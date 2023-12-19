@@ -2,9 +2,7 @@
   "htmlElements": {
     "tags": [
       "a",
-      "blockquote",
       "body",
-      "br",
       "button",
       "div",
       "footer",
@@ -125,6 +123,7 @@
       "xl:grid-cols-4"
     ],
     "ids": [
+      "2017",
       "2018",
       "2019",
       "2020",

@@ -24,3 +24,8 @@ layout = 'page'
 #### 2018
 
 - Pure abstraction, Stanek Gallery, USA  
+
+#### 2017
+
+- Seeing in the Dark: handmade paper and hand-dyed indigo, [Women's Studio Workshop](https://wsworkshop.org/past-exhibitions/), Rosendale, NY -
+July 7 – August 27, 2017  

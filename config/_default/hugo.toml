@@ -15,7 +15,7 @@ copyright = "© Louise Strawbridge"
 disableKinds = ["taxonomy", "term"]
 defaultContentLanguage = "en"
 enableRobotsTXT = true
-timeZone = "Europe/Berlin"
+# timeZone = "Europe/Berlin"
 # theme = "github.com/nicokaiser/hugo-theme-gallery"
 
 [params]
