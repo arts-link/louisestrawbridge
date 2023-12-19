@@ -11,10 +11,7 @@ body, .nav, .logo, .post-title, .page-header, .entry-header, figcaption {
     font-family: 'my_underwoodregular', Arial, sans-serif; 
 }
 
-.post-content figure>figcaption>p {
-    font-size: 1.4em;
-    text-align: center;
-}  
+
 
 .header, .footer {
     background-image: url('/images/img_banner_bg_signature.png') !important;
@@ -24,82 +21,7 @@ body, .nav, .logo, .post-title, .page-header, .entry-header, figcaption {
     /* position: relative;
     overflow: hidden; */
 }
-.main {
-    /* display: flex;
-    justify-content: center;
-    gap: 20px; Adjust the gap between the post-entry boxes */
-  }
-.post-entry {
-    width: 30%;
-    float: left;
-    margin: 5px;
-    padding: 10px;
-}
-.post-entry::after {
-    content: "";
-    display: block;
-    clear: both;
-}
 
-.fj-gallery {
-    position: relative;
-    overflow: hidden;
-  }
-  .fj-gallery::after {
-    content: "";
-    display: block;
-    clear: both;
-  }
-  .fj-gallery .fj-gallery-item {
-    float: left;
-    top: 0;
-    left: 0;
-  }
-  .fj-gallery .fj-gallery-item > img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  /* 
-  
-  Css to center the header elements
-  
-  */
-
-  .header {
-    /* display: flex; */
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .nav {
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .logo {
-    margin-bottom: 10px; /* Optional: Add some space between logo and menu */
-  }
-  
-  /* #menu {
-    list-style: none;
-    padding: 0;
-    display: flex;
-  } */
-  
-  #menu li {
-    margin: 0 10px; /* Optional: Add some space between menu items */
-  }
-  
-  #menu a {
-    text-decoration: none;
-    color: #333; /* Optional: Set your desired text color */
-  }
-  
-
-  /* Add this to your CSS file or create a new stylesheet */
 
 #overlay {
     display: block;

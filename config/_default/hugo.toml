@@ -1,42 +1,99 @@
 baseURL = 'https://www.louisestrawbridge.com/'
-languageCode = 'en-us'
 title = 'Louise Strawbridge Artist Portfolio - Dev'
-theme = ['PaperMod']
-[Params]
-#  label.icon = '/images/louisestrawbridge.png'
-  label.text = 'Louise Strawbridge'
-  # disableThemeToggle = true
-  defaultTheme = 'light'
-#   comingSoon = true
-  # profileMode = true
-  mainSections = ['gallery']
+theme = ['gallery']
+# [Params]
+# #  label.icon = '/images/louisestrawbridge.png'
+#   label.text = 'Louise Strawbridge'
+#   # disableThemeToggle = true
+#   defaultTheme = 'light'
+# #   comingSoon = true
+#   # profileMode = true
+#   mainSections = ['gallery']
+
+languageCode = "en-us"
+copyright = "© Louise Strawbridge"
+disableKinds = ["taxonomy", "term"]
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+timeZone = "Europe/Berlin"
+# theme = "github.com/nicokaiser/hugo-theme-gallery"
+
+[params]
+  title = "Louise Strawbridge Artist Portfolio"
+  description = "The work of Louise Strawbridge"
+#   defaultTheme = "dark"
+
+[author]
+  name = "Louise Strawbridge"
+
+[outputs]
+  page = ["HTML"]
+  home = ["HTML", "RSS"]
+  section = ["HTML"]
+
+[imaging]
+  resampleFilter = "CatmullRom"
+  quality = 75
+  [imaging.exif]
+    disableDate = false
+    disableLatLong = true
+    includeFields = "ImageDescription"
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = "0.112.0"
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "hugo_stats.json"
+    target = "assets/watching/hugo_stats.json"
+
+[build]
+  writeStats = true
+  [[build.cachebusters]]
+    source = "assets/watching/hugo_stats\\.json"
+    target = "styles\\.css"
+  [[build.cachebusters]]
+    source = "(postcss|tailwind)\\.config\\.js"
+    target = "css"
+  [[build.cachebusters]]
+    source = "assets/.*\\.(js)"
+    target = "js"
+  [[build.cachebusters]]
+    source = "assets/.*\\.(.*)$"
+    target = "$1"
 
 [menu]
-[[menu.main]]
-    identifier = "work"
-    name = 'Work'
-    url = '/gallery/'
-    weight = 20
+# [[menu.footer]]
+#   name = "GitHub"
+#   url = "https://github.com/nicokaiser/hugo-theme-gallery/"
+#   weight = 3
+# [[menu.main]]
+#     identifier = "work"
+#     name = 'Work'
+#     url = '/gallery/'
+#     weight = 20
   
 [[menu.main]]
     identifier = 'assemblage'
     name = 'Assemblage'
-    url = '/gallery/assemblage/'
+    url = '/assemblage/'
     parent = 'work'
     weight = 21
 [[menu.main]]
     identifier = 'artistsbooks'
     name = "Artist's Books"
-    url = '/gallery/artistsbooks/'
+    url = '/artistsbooks/'
     parent = 'work'
     weight = 22
 [[menu.main]]
     identifier = 'collage'
     name = 'Collage'
-    url = '/gallery/collage/'
+    url = '/collage/'
     parent = 'work'
     weight = 23
-
 [[menu.main]]
     name = 'Resume'
     url = '/resume/'
