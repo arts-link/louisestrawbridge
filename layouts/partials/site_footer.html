@@ -15,9 +15,11 @@
 
   {{- $isChristmas := (.Param "showChristmasOverlay") | default false }}
   {{- if $isChristmas }}
-    <div id="christmas-present" class="m-2 flex flex-wrap justify-center">
+
+    <button id="christmas-present" class="cursor-pointer m-2 flex flex-wrap justify-center" aria-label="Rewrap Christmas Present!" title="Rewrap Christmas Present!">
+    {{/*  <div id="christmas-present" class="m-2 flex flex-wrap justify-center">  */}}
       <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-        width="10px" height="10px" viewBox="0 0 362.201 362.201"
+        width="15px" height="15px" viewBox="0 0 362.201 362.201"
         xml:space="preserve">
         <g>
           <path d="M322.221,88.215h-34.004c2.794-2.854,5.178-6.141,7.062-9.792c4.952-9.6,5.869-20.554,2.583-30.843
@@ -38,7 +40,8 @@
             M314.221,151.795H293.59H189.1v-47.58h125.121V151.795z"/>
         </g>
       </svg>
-    </div>
+    {{/*  </div>  */}}
+    </button>
 
     <script>
         document.getElementById('christmas-present').addEventListener('click', function() {

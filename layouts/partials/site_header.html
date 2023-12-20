@@ -18,9 +18,9 @@
           {{ end }}
         {{/* Leave this in with an empty link for the home page */}}
           {{ else }}
-          <a class="inline-flex items-center py-4 text-xl font-medium dark:text-neutral-100" href="{{ .Site.Home.RelPermalink }}">
+          <span>
           &nbsp;
-          </a>  
+          </span>  
         {{ end }}
   
         <button @click="expanded = !expanded" type="button" class="group -me-4 ml-3 inline-flex items-center p-3 text-sm dark:text-neutral-100" title="{{ i18n "albums" }}">
