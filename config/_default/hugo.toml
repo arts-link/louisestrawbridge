@@ -1,5 +1,5 @@
 baseURL = 'https://www.louisestrawbridge.com/'
-title = ''
+title = 'Louise Strawbridge Artist Portfolio'
 theme = ['gallery']
 languageCode = "en-us"
 copyright = "© Louise Strawbridge"

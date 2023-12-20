@@ -1,3 +1,4 @@
+
 <header class="w-full">
     <div class="mx-auto flex max-w-screen-3xl flex-wrap justify-between px-6" x-data="{ expanded: false }">
       <div class="flex h-16 w-full justify-between">
@@ -15,10 +16,11 @@
               </svg>
             </a>
           {{ end }}
-        {{ else }}
+        {{/* Leave this in with an empty link for the home page */}}
+          {{ else }}
           <a class="inline-flex items-center py-4 text-xl font-medium dark:text-neutral-100" href="{{ .Site.Home.RelPermalink }}">
-            {{ .Site.Title }}
-          </a>
+          &nbsp;
+          </a>  
         {{ end }}
   
         <button @click="expanded = !expanded" type="button" class="group -me-4 ml-3 inline-flex items-center p-3 text-sm dark:text-neutral-100" title="{{ i18n "albums" }}">

@@ -33,7 +33,7 @@
   </div>  */}}
   <div id="overlay" class="fixed top-0 left-0 w-full h-full bg-red-500 z-50">
     <div id="overlay-content" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 text-center">
-        <button id="close-overlay" class="text-white px-10 py-5 cursor-pointer">
+        <button id="close-overlay" class="text-white px-10 py-5 cursor-pointer" aria-label="Open Christmas Present!" title="Open Christmas Present!">
             <!-- SVG for the present (adjust as needed) -->
             <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
         width="150px" height="150px" viewBox="0 0 362.201 362.201"
@@ -65,16 +65,17 @@
 
   <script>
     document.getElementById('close-overlay').addEventListener('click', function() {
-      // Add the 'fade-out' class to the overlay for fading animation
-      document.getElementById('overlay').classList.add('fade-out');
+      // Add the 'expand-and-fade' class to the overlay for expand and fade animation
+      document.getElementById('overlay').classList.add('expand-and-fade');
   
-      // Add a delay to allow time for the fading animation
+      // Add a delay to allow time for the animation
       setTimeout(function() {
-          // Hide the overlay after the fading animation
+          // Hide the overlay after the animation
           document.getElementById('overlay').style.display = 'none';
           localStorage.setItem('overlayShown', 'true'); // Set local storage to hide the overlay
       }, 1000); // 1000ms (1 second) delay, adjust as needed
-  });
+    });
+  
   
 
     // Check local storage to determine whether to show the overlay

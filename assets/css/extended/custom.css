@@ -1,22 +1,14 @@
-body {
-    /* Set the background image URL */
-    background-image: url('/images/img_bg.jpg') !important;
-}
-body.dark {
-    /* Set the background image URL */
-    background-image: url('/images/img_dark_bg.png') !important;
-}
-
 body, .nav, .logo, .post-title, .page-header, .entry-header, figcaption { 
     font-family: 'my_underwoodregular', Arial, sans-serif; 
 }
 
-@keyframes fadeOut {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+@keyframes expandAndFade {
+  0% { transform: scale(1); opacity: 1; }
+  25% { transform: scale(1.25); opacity: 1; }
+  100% { transform: scale(0.1); opacity: 0; }
 }
 
-.fade-out {
-  animation: fadeOut 1s ease-in-out;
+.expand-and-fade {
+  animation: expandAndFade 1s ease-in-out;
 }
 
