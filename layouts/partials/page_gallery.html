@@ -43,14 +43,18 @@
             height="{{ $thumbnail.Height }}"
             class="lazyload"
             data-src="{{ $thumbnail.RelPermalink }}"
-            {{ with $metadata }}
-              {{ if .ImageDescription }}
-                alt="{{ .ImageDescription }}"
-              {{ else }}
-                {{ if .Title }}
-                  alt="{{ .Title }}"
+            {{ if $metadata }}
+              {{ with $metadata }}
+                {{ if .ImageDescription }}
+                  alt="{{ .ImageDescription }}"
+                {{ else }}
+                  {{ if .Title }}
+                    alt="{{ .Title }}"
+                  {{ end }}
                 {{ end }}
               {{ end }}
+            {{ else }}
+              alt="{{ .Title }}"
             {{ end }}
           />
           <meta itemprop="contentUrl" content="{{ $original.RelPermalink }}" />

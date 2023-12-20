@@ -1,9 +1,8 @@
 +++
 title = 'Collage'
 cover.image = "cover_collage.png"
-cover.alt = "The alt text"
-cover.caption = "The caption"
+cover.alt = "Collage"
+cover.caption = "Collage"
 cover.relative = false
-# date = 2023-12-08T00:02:20-08:00
 description = "Handmade Papers and Dye joined together in Collage form."
 +++
