@@ -1,22 +1,12 @@
 baseURL = 'https://www.louisestrawbridge.com/'
-title = 'Louise Strawbridge Artist Portfolio - Dev'
+title = ''
 theme = ['gallery']
-# [Params]
-# #  label.icon = '/images/louisestrawbridge.png'
-#   label.text = 'Louise Strawbridge'
-#   # disableThemeToggle = true
-#   defaultTheme = 'light'
-# #   comingSoon = true
-#   # profileMode = true
-#   mainSections = ['gallery']
-
 languageCode = "en-us"
 copyright = "© Louise Strawbridge"
 disableKinds = ["taxonomy", "term"]
 defaultContentLanguage = "en"
 enableRobotsTXT = true
-# timeZone = "Europe/Berlin"
-# theme = "github.com/nicokaiser/hugo-theme-gallery"
+timeZone = "America/New_York"
 
 [params]
   title = "Louise Strawbridge Artist Portfolio"
@@ -66,30 +56,15 @@ enableRobotsTXT = true
     target = "$1"
 
 [menu]
-[[menu.main]]
+[[menu.footer]]
     name = 'Resume'
     url = '/resume/'
     weight = 30
-[[menu.main]]
+[[menu.footer]]
     name = 'About'
     url = '/about/'
-    weight = 40
-[[menu.main]]
+    weight = 20
+[[menu.footer]]
     name = 'Contact'
     url = '/contact/'
     weight = 50
-# [[menu.main]]
-#     identifier = 'assemblage'
-#     name = 'Assemblage'
-#     url = '/assemblage/'
-#     weight = 21
-# [[menu.main]]
-#     identifier = 'artistsbooks'
-#     name = "Artist's Books"
-#     url = '/artistsbooks/'
-#     weight = 22
-# [[menu.main]]
-#     identifier = 'collage'
-#     name = 'Collage'
-#     url = '/collage/'
-#     weight = 23

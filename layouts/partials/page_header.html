@@ -1,8 +1,9 @@
 {{ if .Title }}
-  <div class="signature mx-auto mb-16 mt-9 max-w-screen-lg px-6 text-center">
+  <div class="bg-louise-signature bg-no-repeat bg-contain bg-center mx-auto mb-16 max-w-screen-lg px-6 h-24 text-center flex flex-col justify-center">
     <h1 class="text-3xl font-semibold md:text-4xl">{{ .Title }}</h1>
     {{ if .Params.Description }}
       <p class="mt-6 text-neutral-500 dark:text-neutral-400 md:text-lg">{{ .Params.Description }}</p>
     {{ end }}
   </div>
 {{ end }}
+ 

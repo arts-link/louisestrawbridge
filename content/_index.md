@@ -1,7 +1,7 @@
 ---
 title: Louise Strawbridge 
-linktitle: Home
-description: A gallery of Louise Strawbridge's art.
+linktitle: Louise Strawbridge Artist Portfolio 
+description: A gallery of Art by Louise Strawbridge
 #lastmod: 2023-07-05
 featured_image: louisestrawbridge.png # default: first image in this directory
 # featured_image on the home page is used for OpenGraph cards, etc.

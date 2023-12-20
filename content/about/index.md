@@ -14,6 +14,6 @@ is in the permanent collection of Zhengzhou Art Museum, China.
 
 
 ### Links
-- [Louise Strawbridge joins local menders](https://www.inquirer.com/news/philadelphia/broad-street-ministry-mending-clothing-repair-unhoused-homeless-20231218.html)
-- [Louise Strawbridge on Artsy.net](https://www.artsy.net/artist/louise-strawbridge)
-- [Louise Strawbridge, Art's Better Language](https://www.youtube.com/watch?v=1dw-EzUfTB4)
+- Louise Strawbridge joins local menders - [Philly Inquirer](https://www.inquirer.com/news/philadelphia/broad-street-ministry-mending-clothing-repair-unhoused-homeless-20231218.html)
+- Louise Strawbridge on Artsy.net - [Artsy.net](https://www.artsy.net/artist/louise-strawbridge)
+- Louise Strawbridge, Art's Better Language - [YouTube](https://www.youtube.com/watch?v=1dw-EzUfTB4)
