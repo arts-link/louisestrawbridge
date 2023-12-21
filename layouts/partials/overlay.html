@@ -69,28 +69,20 @@
 
 // Amount of Snowflakes
 var snowMax = 150;
-
 // Snowflake Colours
 var snowColor = ["#DDD", "#EEE", "#FFF", "#00FF00"];
-
 // Snow Entity
 var snowEntity = "❄";
-
 // Falling Velocity
 var snowSpeed = 0.85;
-
 // Minimum Flake Size
 var snowMinSize = 4;
-
 // Maximum Flake Size
 var snowMaxSize = 24;
-
 // Refresh Rate (in milliseconds)
 var snowRefresh = 50;
-
 // Additional Styles
 var snowStyles = "cursor: default; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none;";
-
 /*
 // End of Configuration
 // ----------------------------------------
@@ -155,8 +147,17 @@ function moveSnow() {
 	setTimeout("moveSnow()", snowRefresh);
 }
 
+if (localStorage.getItem('overlayShown') != 'true') {
+var snowContainer = document.getElementById("snow");
+
 for (i = 0; i <= snowMax; i++) {
-	document.write("<span id='flake" + i + "' style='" + snowStyles + "position:absolute;top:-" + snowMaxSize + "'>" + snowEntity + "</span>");
+	// document.write("<span id='flake" + i + "' style='" + snowStyles + "position:absolute;top:-" + snowMaxSize + "'>" + snowEntity + "</span>");
+  var flake = document.createElement("span");
+  flake.id = "flake" + i;
+  flake.style.cssText = snowStyles + "position:absolute;top:-" + snowMaxSize + "px";
+  flake.innerHTML = snowEntity;
+  snowContainer.appendChild(flake);
+}
 }
 
 function removeSnowflakes() {

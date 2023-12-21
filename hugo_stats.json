@@ -33,7 +33,6 @@
       "-ms-4",
       "-translate-x-1/2",
       "-translate-y-1/2",
-      "3xl:grid-cols-5",
       "absolute",
       "antialiased",
       "aspect-[3/2]",
@@ -144,7 +143,6 @@
       "transition-colors",
       "w-6",
       "w-full",
-      "xl:grid-cols-4",
       "z-50"
     ],
     "ids": [
