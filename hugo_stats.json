@@ -126,6 +126,7 @@
       "sm:grid-cols-2",
       "sm:px-6",
       "sm:text-5xl",
+      "snow",
       "text-3xl",
       "text-black",
       "text-center",
@@ -160,7 +161,8 @@
       "links",
       "overlay",
       "overlay-content",
-      "selected-group-exhibitions"
+      "selected-group-exhibitions",
+      "snow"
     ]
   }
 }
