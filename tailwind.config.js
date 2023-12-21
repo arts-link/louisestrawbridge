@@ -20,7 +20,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["InterVariable", ...defaultTheme.fontFamily.sans],
+        sans: ["my_underwoodregular", ...defaultTheme.fontFamily.sans],
       },
       screens: {
         "3xl": "1792px",

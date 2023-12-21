@@ -1,6 +1,3 @@
-body, .nav, .logo, .post-title, .page-header, .entry-header, figcaption { 
-    font-family: 'my_underwoodregular', Arial, sans-serif; 
-}
 
 @keyframes expandAndFade {
   0% { transform: scale(1); opacity: 1; }

@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'my_underwoodregular';
+    src: url('/images/fonts/myunderwood-webfont.eot');
+    src: url('/images/fonts/myunderwood-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/images/fonts/myunderwood-webfont.woff') format('woff'),
+         url('/images/fonts/myunderwood-webfont.ttf') format('truetype'),
+         url('/images/fonts/myunderwood-webfont.svg#my_underwoodregular') format('svg');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: auto;
+  font-named-instance: "Regular";
+}
 
 @tailwind base;
 @tailwind components;

@@ -10,7 +10,7 @@ git submodule update
 brew install hugo
 ```
 
-- add node_modules to .gitignore  
+- add `node_modules` to .gitignore  
 
 - install javascript pacages
 ```bash
