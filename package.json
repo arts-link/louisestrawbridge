@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^15.1.0",
+    "tailwindcss": "^3.4.0"
+  },
+  "name": "louisestrawbridge.com",
+  "version": "1.0.0",
+  "description": "setup requirements for running louisestrawbridge.com",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benstraw/louisestrawbridge.git"
+  },
+  "author": "Ben Strawbridge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benstraw/louisestrawbridge/issues"
+  },
+  "homepage": "https://github.com/benstraw/louisestrawbridge#readme"
+}
