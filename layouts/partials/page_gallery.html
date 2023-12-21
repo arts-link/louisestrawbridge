@@ -17,8 +17,8 @@
             {{ $rotation = " r270" }}
           {{ end }}
         {{ end }}
-        {{ $thumbnail := ($original.Fit (printf "%s %s" "800x800" $rotation)) }}
-        {{ $full := ($original.Fit (printf "%s %s" "1600x1600" $rotation)) }}
+        {{ $thumbnail := ($original.Fit (printf "%s %s q75 webp" "800x800" $rotation)) }}
+        {{ $full := ($original.Fit (printf "%s %s" "1600x1600 q100 webp" $rotation)) }}
         {{ $color := index $thumbnail.Colors 0 | default "transparent" }}
         {{ $altTitleText := page.Title }}
         {{ if $metadata }}
