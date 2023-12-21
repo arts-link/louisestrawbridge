@@ -4,6 +4,7 @@
 /themes/*/exampleSite/
 *.log
 /_ignore/
+/mode_modules
 
 # frontmatter
 .frontmatter/
