@@ -27,3 +27,5 @@ hugo --gc # add --gc for full garbage collection
 ```bash
 hugo serveer --disableFastRender # enable for full rebuilds on change
 ```
+
+https://www.format.com/
