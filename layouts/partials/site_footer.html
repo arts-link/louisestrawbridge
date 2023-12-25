@@ -16,10 +16,10 @@
   {{- $isChristmas := (.Param "showChristmasOverlay") | default false }}
   {{- if $isChristmas }}
 
-    <button id="christmas-present" class="cursor-pointer m-2 flex flex-wrap justify-center" aria-label="Rewrap Christmas Present!" title="Rewrap Christmas Present!">
+    <button id="christmas-present" class="cursor-pointer m-2 flex flex-wrap justify-center hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" aria-label="Rewrap Christmas Present!" title="Rewrap Christmas Present!">
     {{/*  <div id="christmas-present" class="m-2 flex flex-wrap justify-center">  */}}
       <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-        width="15px" height="15px" viewBox="0 0 362.201 362.201"
+        width="25px" height="25px" viewBox="0 0 362.201 362.201"
         xml:space="preserve">
         <g>
           <path d="M322.221,88.215h-34.004c2.794-2.854,5.178-6.141,7.062-9.792c4.952-9.6,5.869-20.554,2.583-30.843
@@ -46,6 +46,7 @@
     <script>
         document.getElementById('christmas-present').addEventListener('click', function() {
           localStorage.setItem('overlayShown', 'false'); // Set local storage to hide the overlay
+          window.location.reload(); // Reload the page
         });
     </script>
   {{- end }}
