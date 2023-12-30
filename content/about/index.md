@@ -1,4 +1,3 @@
-# index
 +++
 title = 'About'
 layout = 'page'
