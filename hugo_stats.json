@@ -6,7 +6,6 @@
       "br",
       "button",
       "div",
-      "figure",
       "footer",
       "form",
       "g",
@@ -190,8 +189,7 @@
       "overlay",
       "overlay-content",
       "selected-group-exhibitions",
-      "snow",
-      "welcome-to-louise-strawbridges-artist-portfolio"
+      "snow"
     ]
   }
 }
