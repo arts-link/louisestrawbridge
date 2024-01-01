@@ -12,7 +12,7 @@ brew install hugo
 
 - add `node_modules` to .gitignore  
 
-- install javascript pacages
+- install javascript packages
 ```bash
 npm install
 ```
