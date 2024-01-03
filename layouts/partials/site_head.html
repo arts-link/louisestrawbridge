@@ -22,9 +22,9 @@
       {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
     {{- if hugo.IsProduction | or (eq site.Params.env "production") }}
-    {{ template "_internal/google_analytics.html" . }}
-    {{ partialCached "head/opengraph.html" . }}
-    {{- end -}}
+      {{ template "_internal/google_analytics.html" . }}
+      {{ partialCached "opengraph.html" . }}
+    {{- end -}} 
     {{/*  include any css files in site root/assets/css  */}}
     {{ $extended := (resources.Match "css/extended/*.css") | resources.Concat "assets/css/extended.css" }}
     {{ $css := resources.Get "/css/styles.css" | resources.PostCSS (dict "inlineImports" true) }}
