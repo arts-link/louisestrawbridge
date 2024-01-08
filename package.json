@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/benstraw/louisestrawbridge#readme",
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.32",
     "postcss-cli": "^11.0.0"
