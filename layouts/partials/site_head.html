@@ -28,11 +28,11 @@
     {{/*  include any css files in site root/assets/css  */}}
     {{ $extended := (resources.Match "css/extended/*.css") | resources.Concat "assets/css/extended.css" }}
     {{ $css := resources.Get "/css/styles.css" | resources.PostCSS (dict "inlineImports" true) }}
-    {{ $mergedCss := slice $extended $css | resources.Concat "css/merged.css" }}
+    {{ $css := slice $extended $css | resources.Concat "css/styles.css" }}
     {{ if hugo.IsProduction }}
-      {{ $mergedCss := $mergedCss | resources.Minify | resources.Fingerprint }}
+      {{ $css := $css | resources.Minify | resources.Fingerprint }}
     {{ end }}
-    <link rel="stylesheet" href="{{ $mergedCss.RelPermalink }}" />
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"/>
     {{ $js := resources.Get "js/main.js" | js.Build (dict "minify" true) | resources.Fingerprint }}
     <script src="{{ $js.RelPermalink }}" defer></script>
   </head>
