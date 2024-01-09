@@ -29,3 +29,13 @@ hugo serveer --disableFastRender # enable for full rebuilds on change
 ```
 
 https://www.format.com/
+
+
+
+
+### Points to disucss
+
+- static page copy  
+- gallery captions  
+- mailchimp setup  
+-- physical address  
