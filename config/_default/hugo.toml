@@ -89,6 +89,10 @@ timeZone = "America/New_York"
     name = 'Stuck'
     url = '/collage/stuck/'
     weight = 30
+[[menu.collage]]
+    name = 'Transparent'
+    url = '/collage/transparent/'
+    weight = 30
 
 [[menu.sculpture]]
     name = 'Boxes'
