@@ -1,6 +1,8 @@
 +++
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
 date = {{ .Date }}
+# set if you want it to show up in a submenu, which must be defined in hugo.toml at this point.
+submenu = ""
 
 ###############################################################################
 # 
