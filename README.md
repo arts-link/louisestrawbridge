@@ -32,9 +32,9 @@ https://www.format.com/
 
 
 
-
 ### Points to disucss
 
+- github?
 - static page copy  
 - gallery captions  
 - mailchimp setup  
