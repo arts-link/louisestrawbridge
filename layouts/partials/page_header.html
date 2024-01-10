@@ -6,4 +6,8 @@
     {{ end }}
   </div>
 {{ end }}
- 
+{{ if hugo.IsProduction }}
+Prod!
+{{ else }}
+Not Prod!
+{{ end }}
