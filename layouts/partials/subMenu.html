@@ -1,0 +1,48 @@
+{{- $page := .page }}
+{{- $menuID := .menuID }}
+{{/*  [{{ $menuID }}]  */}}
+{{/*  {{ printf "Type of partial myVariable: %T" $menuID }}  */}}
+{{- with index site.Menus $menuID }}
+  <nav>
+    <ul class="my-2 flex flex-wrap justify-center">
+      {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+    </ul>
+  </nav>
+{{- end }}
+
+{{- define "partials/inline/menu/walk.html" }}
+  {{- $page := .page }}
+  {{ $list := (.menuEntries) }}
+  {{ $len := (len $list) }}
+
+  {{- range $index, $element := $list }}
+  {{/*  {{- range .menuEntries }}  */}}
+    {{- $attrs := dict "href" .URL }}
+    {{- if $page.IsMenuCurrent .Menu . }}
+      {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "page") }}
+    {{- else if $page.HasMenuCurrent .Menu .}}
+      {{- $attrs = merge $attrs (dict "class" "ancestor" "aria-current" "true") }}
+    {{- end }}
+    {{- $name := .Name }}
+    {{- with .Identifier }}
+      {{- with T . }}
+        {{- $name = . }}
+      {{- end }}
+    {{- end }}
+    <li class="mx-2">
+      <a
+        {{- range $k, $v := $attrs }}
+          {{- with $v }}
+            {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+          {{- end }}
+        {{- end -}}
+      >{{ $name }}</a>
+      {{- with .Children }}
+        <ul>
+          {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+        </ul>
+      {{- end }}
+      {{ if ne (add $index 1) $len }}&nbsp;|&nbsp;{{ end }}
+    </li>
+  {{- end }}
+{{- end }}

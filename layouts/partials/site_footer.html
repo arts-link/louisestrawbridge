@@ -1,15 +1,6 @@
 <footer class="bg-louise-signature bg-no-repeat bg-contain bg-center mx-auto mb-10 mt-4 flex max-w-screen-3xl flex flex-col justify-center px-6 text-center text-sm text-neutral-600 dark:text-neutral-400">
-  {{ if .Site.Menus.footer }}
-    <ul class="my-2 flex flex-wrap justify-center">
-      {{ range .Site.Menus.footer }}
-        <li>
-          <a href="{{ .URL }}" class="mx-2">
-            {{ .Name }}
-          </a>
-        </li>
-      {{ end }}
-    </ul>
-  {{ end }}
+
+  {{ partial "subMenu.html" (dict "menuID" "footer" "page" .) }}
   <div class="m-2">{{ .Site.Copyright }}</div>
   <div class="m-2"><a href="https://www.arts-link.com/" target="_blank" class="m-2">created by arts-link.com</a></div>
 

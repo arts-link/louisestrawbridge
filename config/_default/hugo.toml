@@ -68,3 +68,45 @@ timeZone = "America/New_York"
     name = 'Contact'
     url = '/contact/'
     weight = 50
+
+[[menu.collage]]
+    name = 'Expanding My Horizons'
+    url = '/collage/expanding_my_horizons/'
+    weight = 30
+[[menu.collage]]
+    name = 'Old Book Covers'
+    url = '/collage/old_book_covers/'
+    weight = 30
+[[menu.collage]]
+    name = 'Red Brings Good Fortune'
+    url = '/collage/red_brings_good_fortune/'
+    weight = 30
+[[menu.collage]]
+    name = 'Seeing in the Dark'
+    url = '/collage/seeing_in_the_dark/'
+    weight = 30
+[[menu.collage]]
+    name = 'Stuck'
+    url = '/collage/stuck/'
+    weight = 30
+
+[[menu.sculpture]]
+    name = 'Boxes'
+    url = '/sculpture/boxes/'
+    weight = 30
+[[menu.sculpture]]
+    name = 'Hands'
+    url = '/sculpture/hands/'
+    weight = 20
+[[menu.sculpture]]
+    name = 'Poetry People'
+    url = '/sculpture/poetry_people/'
+    weight = 10
+[[menu.sculpture]]
+    name = 'Stele'
+    url = '/sculpture/stele/'
+    weight = 50
+[[menu.sculpture]]
+    name = 'Vessels'
+    url = '/sculpture/vessels/'
+    weight = 30

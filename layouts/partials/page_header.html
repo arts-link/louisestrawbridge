@@ -1,13 +1,25 @@
 {{ if .Title }}
   <div class="bg-louise-signature bg-no-repeat bg-contain bg-center mx-auto mb-16 max-w-screen-lg px-6 h-24 text-center flex flex-col justify-center">
-    <h1 class="text-3xl font-semibold md:text-4xl">{{ .Title }}</h1>
+    <h1 class="text-4xl md:text-5xl uppercase">{{ .Title }}</h1>
     {{ if .Params.Description }}
       <p class="mt-6 text-neutral-500 dark:text-neutral-400 md:text-lg">{{ .Params.Description }}</p>
     {{ end }}
+
+    {{ if .Params.subMenu }}
+
+      {{ $submenu := .Params.subMenu }}
+      {{/*  --{{ $submenu }}--  */}}
+      {{/*  {{ $submenu := "sculpture" }}  */}}
+      {{/*  -+{{ $submenu }}+--  */}}
+      {{/*  {{ printf "Type of myVariable: %T" $submenu }}  */}}
+      {{ partial "subMenu.html" (dict "menuID" $submenu "page" .) }}
+
+    {{ end }}
+  
   </div>
 {{ end }}
 {{ if hugo.IsProduction }}
-Prod!
+{{/*  Prod!  */}}
 {{ else }}
-Not Prod!
+{{/*  Not Prod!  */}}
 {{ end }}
