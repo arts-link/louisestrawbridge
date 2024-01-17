@@ -28,8 +28,9 @@ hugo --gc # add --gc for full garbage collection
 hugo serveer --disableFastRender # enable for full rebuilds on change
 ```
 
-https://www.format.com/
+### Inspirations
 
+https://www.matthewharriscloth.co.uk/see/
 
 
 ### Points to disucss
@@ -39,3 +40,7 @@ https://www.format.com/
 - gallery captions  
 - mailchimp setup  
 -- physical address  
+
+### Investigate
+
+- https://buttondown.email/ for newsletters
