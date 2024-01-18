@@ -1,4 +1,4 @@
 +++
 title = 'Sculpture'
-subMenu  = 'sculpture'
+# subMenu  = 'sculpture'
 +++

@@ -3,6 +3,7 @@
     "tags": [
       "a",
       "body",
+      "br",
       "button",
       "div",
       "fieldset",
@@ -11,7 +12,6 @@
       "h1",
       "h2",
       "h3",
-      "h4",
       "head",
       "header",
       "html",
@@ -26,8 +26,10 @@
       "option",
       "p",
       "path",
+      "picture",
       "script",
       "select",
+      "source",
       "span",
       "svg",
       "title",
@@ -93,6 +95,8 @@
       "h-full",
       "hover:brightness-90",
       "hover:text-black",
+      "huh",
+      "img-fluid",
       "indicates-required",
       "inline-flex",
       "items-center",
@@ -173,15 +177,10 @@
       "w-full"
     ],
     "ids": [
-      "2017",
-      "2018",
-      "2019",
-      "2020",
-      "2022",
       "biography",
-      "gallery-shows",
       "gdpr_97567",
       "gdpr_97568",
+      "group-exhibitions",
       "links",
       "mc-embedded-subscribe",
       "mc-embedded-subscribe-form",
@@ -202,7 +201,9 @@
       "mce-success-response",
       "mceADDRESS-state",
       "mergeRow-gdpr",
-      "selected-group-exhibitions"
+      "reviews",
+      "selected-workshops",
+      "solo-exhibitions"
     ]
   }
 }
