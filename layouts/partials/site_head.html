@@ -32,7 +32,7 @@
     {{- with $css | minify | fingerprint }}
       <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
     {{- end }}
-    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"/>
+    {{/*  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"/>  */}}
     {{ $js := resources.Get "js/main.js" | js.Build (dict "minify" true) | resources.Fingerprint }}
     <script src="{{ $js.RelPermalink }}" defer></script>
   </head>
