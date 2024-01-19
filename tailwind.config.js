@@ -12,6 +12,7 @@ module.exports = {
         'paper-pattern': " url('/images/img_bg.jpg')",
         'dark-paper-pattern': " url('/images/img_dark_bg.png')",
         'louise-signature': " url('/images/img_banner_bg_signature.png')",
+        'louise-signature_home': " url('/images/img_banner_bg_signature_home.webp')",
       },
       colors: {
         neutral: {
