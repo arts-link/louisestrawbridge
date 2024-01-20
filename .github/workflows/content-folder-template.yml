@@ -33,6 +33,7 @@ jobs:
       - name: Create New Gallery directory
         run: hugo new content ${{ github.event.inputs.galleryName }}/index.md
       - name: Copy the placeholder image in
+        # replace this image with a better placeholder image
         run: cp content/louisestrawbridge.png content/${{ github.event.inputs.galleryName }}/
 
       - name: Add, commit, and push
