@@ -43,4 +43,4 @@ jobs:
           hugo-version: "0.64.0"
 
       - name: Create New Gallery directory
-        run: hugo new content surprise-us
+        run: hugo new content surprise-us/index.md
