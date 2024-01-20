@@ -41,7 +41,7 @@ jobs:
           hugo-version: "0.121.1"
 
       - name: Create New Gallery directory
-        run: hugo new content surprise-us/index.md
+        run: hugo new content ${{ github.event.inputs.logLevel }}/index.md
 
       - name: Add, commit, and push
         uses: actions4git/add-commit-push@v1.0.0
