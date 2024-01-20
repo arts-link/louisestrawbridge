@@ -1,0 +1,7 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+/* TEAM */
+  Owner: Louise Strawbridge 
+  Site: https://www.louisestrawbridge.com
+  Location: Los Angeles, CA, USA
