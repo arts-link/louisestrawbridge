@@ -7,7 +7,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
-      logLevel:
+      galleryName:
         description: 'Gallery Name'     
         required: true
         # default: 'warning'
@@ -31,7 +31,9 @@ jobs:
           hugo-version: "0.121.1"
 
       - name: Create New Gallery directory
-        run: hugo new content ${{ github.event.inputs.logLevel }}/index.md
+        run: hugo new content ${{ github.event.inputs.galleryName }}/index.md
+      - name: Copy the placeholder image in/
+        run: cp content/louisestrawbridge.png content/${{ github.event.inputs.galleryName }}/
 
       - name: Add, commit, and push
         uses: actions4git/add-commit-push@v1.0.0
