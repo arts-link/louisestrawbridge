@@ -1,4 +1,4 @@
-name: SO-023 Create folder
+name: Create content template 
 
 on:
   push:
