@@ -46,5 +46,5 @@ jobs:
       - name: Add, commit, and push
         uses: actions4git/add-commit-push@v1.0.0
         with:
-          commit-message: "Automated Changes occured." # optional, default is Automated changes
+          commit-message: "Automated Changes occured. Added new content ${{ github.event.inputs.logLevel }}/index.md" # optional, default is Automated changes
     
