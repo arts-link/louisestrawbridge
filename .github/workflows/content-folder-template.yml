@@ -44,3 +44,9 @@ jobs:
 
       - name: Create New Gallery directory
         run: hugo new content surprise-us/index.md
+
+      - name: Add, commit, and push
+        uses: actions4git/add-commit-push@v1.0.0
+        with:
+          commit-message: "Automated Changes occured." # optional, default is Automated changes
+    
