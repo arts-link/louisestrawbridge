@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       galleryName:
-        description: 'Gallery Name'     
+        description: 'Gallery Name, with parent gallery preceding if desired, ie: `collage/new-gallery`'     
         required: true
         # default: 'warning'
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
