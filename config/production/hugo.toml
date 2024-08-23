@@ -3,6 +3,6 @@ title = 'Louise Strawbridge Artist Portfolio'
 [params]
   env = "production"
 
-[services]
-  [services.googleAnalytics]
-    ID = 'G-JMTEM65W38'
+# [services]
+  # [services.googleAnalytics]
+    # ID = 'G-JMTEM65W38'
