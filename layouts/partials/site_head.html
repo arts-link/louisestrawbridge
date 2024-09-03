@@ -22,7 +22,20 @@
       {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
     {{- if hugo.IsProduction | or (eq site.Params.env "production") }}
-      <script defer data-domain="louisestrawbridge.com" src="https://plausible.io/js/script.js"></script>
+      
+      {{ $domain := site.Params.plausible_domain }}
+      {{ $advanced := site.Params.plausible_advanced }}
+      {{ if $domain }}
+        {{ if $advanced }}
+          <script defer data-domain="{{ $domain }}" src="https://plausible.io/js/script.hash.outbound-links.js"></script>
+          <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+        {{ else}}
+          <script defer data-domain="{{ $domain }}" src="https://plausible.io/js/plausible.js"></script>
+        {{ end }}
+      {{ end }}
+      {{ if eq .Kind "404" }} {{ if $advanced }}
+        <script>document.addEventListener('DOMContentLoaded', function () { plausible('404', { props: { path: document.location.pathname } }); });</script>
+      {{ end }} {{ end }}
       {{ partial "opengraph.html" . }}
     {{- end -}} 
     {{/*  include any css files in site root/assets/css  */}}

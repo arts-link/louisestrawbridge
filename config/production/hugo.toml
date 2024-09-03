@@ -2,6 +2,8 @@ title = 'Louise Strawbridge Artist Portfolio'
 
 [params]
   env = "production"
+  plausible_domain = "louisestrawbridge.com"
+  plausible_advanced = true
 
 # [services]
   # [services.googleAnalytics]
