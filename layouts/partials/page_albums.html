@@ -1,5 +1,8 @@
 <div class="mb-12 mt-9 grid grid-cols-1 gap-6 px-6 sm:grid-cols-2 lg:grid-cols-3">
-  {{ range where .Pages.ByDate.Reverse "Params.private" "ne" true }}
+  {{ range where .Pages "Params.private" "ne" true }}
+    {{ if eq .Title "About" }}
+      {{ continue }}
+    {{ end }}
     {{ $images := .Resources.ByType "image" }}
     {{ if gt (len $images) 0 }}
       {{ $featured := ($images.GetMatch (.Params.featured_image | default "*feature*")) | default (index $images 0) }}

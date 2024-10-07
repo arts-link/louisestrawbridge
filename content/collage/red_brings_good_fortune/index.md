@@ -1,7 +1,6 @@
 +++
 title = 'Red Brings Good Fortune'
-date = 2024-01-10T11:08:56-08:00
-
+weight = 50
 ###############################################################################
 # 
 # add a description to have a line of text below the signature header

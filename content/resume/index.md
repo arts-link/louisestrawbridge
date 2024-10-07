@@ -1,6 +1,5 @@
 +++
 title = 'Resume'
-# date = 2023-12-07T23:33:40-08:00
 layout = 'page'
 +++
 
@@ -36,7 +35,7 @@ Louise Strawbridge uses a wide range of materials and textures to explore the po
 2004 - Jane Deering Gallery, “London Artists in America”, Annisquam, MA  
 2003 - Jane Deering Gallery, “London Artists in America”, Annisquam, MA  
 2002 - Royal Academy, “Juried Summer Exhibition”, London, UK  
-2002 - London Artist's Book Fair, London, UK  
+2002 - London Artists' Book Fair, London, UK  
 2001 - Royal Academy, “Juried Summer Exhibition”, London, UK  
 2000 - Story, “collage Books”, London, UK  
 1998 - Penn Charter School Annual Juried Art Show, Philadelphia, PA  
