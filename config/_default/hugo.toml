@@ -1,6 +1,7 @@
 baseURL = 'https://www.louisestrawbridge.com/'
 title = 'Louise Strawbridge Artist Portfolio'
 theme = ['gallery']
+timeout = "120000"
 languageCode = "en-us"
 copyright = "© Louise Strawbridge"
 disableKinds = ["taxonomy", "term"]
