@@ -10,5 +10,4 @@ description = ""
 
 # new content is generated as a draft to avaoid unwanted publication.
 # remove the line draft = true to publish
-draft = true
 +++
