@@ -13,9 +13,8 @@ timeZone = "America/New_York"
   title = "Louise Strawbridge Artist Portfolio"
   description = "The work of Louise Strawbridge"
 #   defaultTheme = "dark"
-
-[author]
-  name = "Louise Strawbridge"
+  [params.author]
+    name = "Louise Strawbridge"
 
 [outputs]
   page = ["HTML"]
