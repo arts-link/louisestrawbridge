@@ -1,5 +1,6 @@
 +++
 title = "Artists' Books"
-weight = 50
+weight = 70
 description = "Handmade Artists' Books and Paper"
+menus = "main"
 +++

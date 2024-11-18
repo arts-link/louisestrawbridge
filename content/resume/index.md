@@ -1,6 +1,8 @@
 +++
 title = 'Resume'
 layout = 'page'
+[menu.footer]
+  weight = 70
 +++
 
 Louise Strawbridge uses a wide range of materials and textures to explore the possibilities of disturbing qualities in the commonplace.  In her work, mystery is not to be solved but valued and explored.  She received a M.A. in Literature from The University of Chicago in 1971 and taught English for many years.  Making art became her full time occupation when she moved to London in 1998.  She has lived in Philadelphia with her husband, David, since 2003.  Her work is in the permanent collection of Zhengzhou Art Museum, China.

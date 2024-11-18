@@ -9,14 +9,11 @@ other = "Go to homepage"
 
 [photoCount]
 one = "1 piece"
-other = "{{ .Count }} pieces"
-
-[in]
-other = "in"
+other = "{{ . }} pieces"
 
 [albumCount]
-one = "1 gallery"
-other = "{{ .Count }} galleries"
+one = "{{ .photoCount }} in {{ .count }} gallery"
+other = "{{ .photoCount }} in {{ .count }} galleries"
 
 [home]
 other = "Home"

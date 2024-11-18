@@ -1,7 +1,8 @@
 +++
 title = 'Collage'
-weight = 50
+weight = 60
 description = "Handmade Papers and Dye joined together in Collage form."
+menus = "main"
 [[cascade]]
   # subMenu = "collage"
 +++

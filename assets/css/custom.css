@@ -1,0 +1,214 @@
+/* custom.css */
+body {
+  background-image: url('/images/img_bg.jpg');
+  background-repeat: repeat; /* Tiling the image */
+  background-size: auto;     /* Keeps the image at its original size */
+  background-position: top left; /* Starts the tiling from the top left */
+  margin: 0;                 /* Removes any default margin */
+  padding: 0;                /* Removes any default padding */
+  font-family: 'my_underwoodregular', sans-serif; /* Fallback to a sans-serif font */
+}
+
+body>header {
+  margin-bottom: 0;;
+}
+
+hgroup {
+  margin: 0 auto 2rem;
+}
+
+hgroup h1 {
+  font-family: 'my_underwoodregular', serif;
+     
+  font-size: 3rem; /* 48px */
+  line-height: 1;
+  text-transform: uppercase;
+  background-image: url('/images/img_banner_bg_signature.png'); /* Set your image path */
+  background-repeat: no-repeat;
+  background-size: contain; /* Scales the background image to fit the container */
+  background-position: center;
+  max-width: 100%; /* Allows the h1 to scale down with screen size */
+  width: 100%; /* Take full width of the container */
+  max-width: 547px; /* Limit max width to image's natural width */
+  height: 104px; /* Set the height to the image’s natural height */
+  padding: 0 1rem; /* Adds horizontal padding */
+  display: flex;
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+  margin: 0 auto; /* Center the element itself */
+  text-align: center; 
+}
+
+/* Override prefers-color-scheme: dark to force light theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Force light theme colors */
+    --surface-1: var(--surface-1-light);
+    --surface-2: var(--surface-2-light);
+    --text-1: var(--text-1-light);
+    --text-2: var(--text-2-light);
+    --border: var(--border-light);
+  }
+}
+
+/* Ensure html uses light theme settings regardless of class */
+html {
+  color-scheme: light;
+
+  --surface-1: var(--surface-1-light);
+  --surface-2: var(--surface-2-light);
+  --text-1: var(--text-1-light);
+  --text-2: var(--text-2-light);
+  --border: var(--border-light);
+}
+
+/* Prevent dark theme class from affecting theme */
+html.dark {
+  color-scheme: light;
+
+  --surface-1: var(--surface-1-light);
+  --surface-2: var(--surface-2-light);
+  --text-1: var(--text-1-light);
+  --text-2: var(--text-2-light);
+  --border: var(--border-light);
+}
+
+@font-face {
+  font-family: 'my_underwoodregular';
+    src: url('/fonts/myunderwood-webfont.eot');
+    src: url('/fonts/myunderwood-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/myunderwood-webfont.woff') format('woff'),
+         url('/fonts/myunderwood-webfont.ttf') format('truetype'),
+         url('/fonts/myunderwood-webfont.svg#my_underwoodregular') format('svg');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: auto;
+  font-named-instance: "Regular";
+}
+figure.artist-image {
+  margin: 0 auto; 
+  text-align: center; 
+  display: flex; 
+  justify-content: center;
+  img {
+    border-radius: 50%; 
+    width: 100%; 
+    max-width: 512px; 
+    height: auto; 
+    object-fit: cover;
+  }
+}
+@media (max-width: 768px) {
+  hgroup h1 {
+    font-size: 2.25rem; /* 36px */
+    line-height: 2.5rem; /* 40px */
+  
+  }
+  figure.artist-image {
+    img {
+      max-width: 300px; 
+    }
+  }
+}
+
+
+.contact-form {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.contact-form p {
+  text-align: center;
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.contact-form__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fff;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #5f6368;
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.submit-button {
+  background-color: #5f6368;
+  color: #fff;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+
+.submit-button:hover {
+  background-color: #4a4f55;
+}
+
+footer section {
+  background-image: url('/images/img_banner_bg_signature.png'); /* Set your image path */
+  background-repeat: no-repeat;
+  background-size: 350px auto; /* Limit the width of the background to 250px */
+  background-position: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5rem; /* mb-10 */
+  margin-top: 1rem; /* mt-4 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 1.5rem; /* px-6 */
+  padding-right: 1.5rem; /* px-6 */
+  text-align: center;
+  font-size: 0.875rem; /* text-sm */
+  color: #4b5563; /* text-neutral-600 */
+
+  a::before {
+    content: "|";
+    margin-right: 0.5rem; /* Add spacing after the | character */
+    color: inherit; /* Match the color of the text */
+  }
+
+}

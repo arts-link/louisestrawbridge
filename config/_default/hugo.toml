@@ -3,7 +3,8 @@ title = 'Louise Strawbridge Artist Portfolio'
 theme = ['gallery']
 timeout = "120000"
 languageCode = "en-us"
-copyright = "© 2024 Louise Strawbridge"
+# This is one janky jawn PR
+copyright = "< 2024 Louise Strawbridge"
 disableKinds = ["taxonomy", "term"]
 defaultContentLanguage = "en"
 enableRobotsTXT = true
@@ -12,10 +13,24 @@ timeZone = "America/New_York"
 [params]
   title = "Louise Strawbridge Artist Portfolio"
   description = "The work of Louise Strawbridge"
-#   defaultTheme = "dark"
   [params.author]
     name = "Louise Strawbridge"
-
+    email = "louisestrawbridge@gmail.com"
+  [params.gallery]
+    boxSpacing = 10
+    targetRowHeight = 408
+    targetRowHeightTolerance = 5.25
+  # [params.socialIcons]
+  #   website = "https://yourwebsite.com"
+  #   mastodon = "https://mastodon.social/@yourprofile"
+  #   pixelfed = "https://pixelfed.org/yourprofile"
+  #   facebook = "https://facebook.com/yourprofile"
+  #   instagram = "https://instagram.com/yourprofile"
+  #   github = "https://github.com/yourprofile"
+  #   twitter = "https://twitter.com/yourprofile"
+  #   youtube = "https://youtube.com/yourchannel"
+  #   linkedin = "https://linkedin.com/in/yourprofile"    
+    
 [outputs]
   page = ["HTML"]
   home = ["HTML", "RSS"]
@@ -42,12 +57,7 @@ timeZone = "America/New_York"
 
 [build]
   writeStats = true
-  [[build.cachebusters]]
-    source = "assets/watching/hugo_stats\\.json"
-    target = "styles\\.css"
-  [[build.cachebusters]]
-    source = "(postcss|tailwind)\\.config\\.js"
-    target = "css"
+  # Only keep necessary cachebusters if you’re not using Tailwind or postcss config files.
   [[build.cachebusters]]
     source = "assets/.*\\.(js)"
     target = "js"
@@ -57,60 +67,6 @@ timeZone = "America/New_York"
 
 [menu]
 [[menu.footer]]
-    name = 'Resume'
-    url = '/resume/'
-    weight = 30
-[[menu.footer]]
-    name = 'About'
-    url = '/about/'
-    weight = 20
-[[menu.footer]]
-    name = 'Contact'
-    url = '/contact/'
-    weight = 50
-
-[[menu.collage]]
-    name = 'Expanding My Horizons'
-    url = '/collage/expanding_my_horizons/'
-    weight = 30
-[[menu.collage]]
-    name = 'Old Book Covers'
-    url = '/collage/old_book_covers/'
-    weight = 30
-[[menu.collage]]
-    name = 'Red Brings Good Fortune'
-    url = '/collage/red_brings_good_fortune/'
-    weight = 30
-[[menu.collage]]
-    name = 'Seeing in the Dark'
-    url = '/collage/seeing_in_the_dark/'
-    weight = 30
-[[menu.collage]]
-    name = 'Stuck'
-    url = '/collage/stuck/'
-    weight = 20
-[[menu.collage]]
-    name = 'Transparent'
-    url = '/collage/transparent/'
-    weight = 10
-
-[[menu.sculpture]]
-    name = 'Boxes'
-    url = '/sculpture/boxes/'
-    weight = 30
-[[menu.sculpture]]
-    name = 'Hands'
-    url = '/sculpture/hands/'
-    weight = 20
-[[menu.sculpture]]
-    name = 'Poetry People'
-    url = '/sculpture/poetry_people/'
-    weight = 10
-[[menu.sculpture]]
-    name = 'Stele'
-    url = '/sculpture/stele/'
-    weight = 50
-[[menu.sculpture]]
-    name = 'Vessels'
-    url = '/sculpture/vessels/'
-    weight = 30
+    name = 'created by arts-link'
+    url = 'https://arts-link.com'
+    weight = 420

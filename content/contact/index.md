@@ -1,9 +1,11 @@
 +++
 title = 'Contact'
 layout = 'page'
+[menu.footer]
+  weight = 90
 +++
 
-{{< mailchimp parameters >}}
+{{< formspree >}}
 
 <!-- ## Feel free to contact me if you wish.  
 

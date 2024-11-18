@@ -1,30 +1,7 @@
 {
-  "dependencies": {
-    "@tailwindcss/typography": "^0.5.10",
-    "postcss-import": "^15.1.0",
-    "tailwindcss": "^3.4.0"
-  },
-  "name": "louisestrawbridge.com",
-  "version": "1.0.0",
-  "description": "setup requirements for running louisestrawbridge.com",
-  "main": "tailwind.config.js",
+  "private": "true",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/benstraw/louisestrawbridge.git"
-  },
-  "author": "Ben Strawbridge",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/benstraw/louisestrawbridge/issues"
-  },
-  "homepage": "https://github.com/benstraw/louisestrawbridge#readme",
-  "devDependencies": {
-    "@tailwindcss/forms": "^0.5.7",
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.32",
-    "postcss-cli": "^11.0.0"
+    "build": "hugo --gc --minify",
+    "dev": "hugo server"
   }
 }
