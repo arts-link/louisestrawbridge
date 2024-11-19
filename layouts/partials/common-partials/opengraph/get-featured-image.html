@@ -1,0 +1,45 @@
+{{ $images := $.Resources.ByType "image" }}
+{{ $featured := resources.Get "/common-partials/opengraph/opengraph-base.png" }}
+  {{ if gt (len $images) 0 }}
+    {{ $featured = index $images 0 }}
+  {{ end }}
+  
+  {{/*  "tight"  */}}
+  {{ $resizeTarget := 1200 }}
+  {{ if eq .Params.scale "wide" }}
+    {{ $resizeTarget = 1920 }}
+  {{ else if eq .Params.scale "medium" }}
+    {{ $resizeTarget = 1600 }}
+  {{ else if eq .Params.scale "none" }}
+    {{ $resizeTarget = "" }}
+  {{ end }}
+  {{ if $resizeTarget }}
+    {{ $featured = $featured.Resize (printf "%dx" $resizeTarget) }}
+  {{ end }}
+  
+  {{ $cropAnchor := "" }}
+  {{ if .Params.anchor }}
+      {{ $cropAnchor = printf "1200x630 %s" .Params.anchor }}
+  {{ else }}
+      {{ $cropAnchor = "1200x630" }}
+  {{ end }}
+  {{ $featured = $featured.Crop $cropAnchor }}
+
+  {{ $description := "" }}
+  {{ with .Site.Params.description }}{{ $description = . }}{{ end }}
+  {{ with .Title }}{{ $description = . }}{{ end }}
+  {{ $site := .Site.Params.site | default .Site.BaseURL }}
+  {{ $text := printf "%s @ %s" $description $site}}
+  {{ $font := (resources.Get "/common-partials/opengraph/opengraph-font.ttf") }}
+  {{ $textOptions := dict
+    "color" "#FFF"
+    "size" 25
+    "lineSpacing" 10
+    "x" 65 "y" 500 
+    "font" $font
+  }}
+  {{ $featured = $featured | images.Filter (images.Text $text $textOptions) }}
+  
+  
+
+{{ return $featured }}

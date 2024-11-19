@@ -13,6 +13,7 @@ timeZone = "America/New_York"
 [params]
   title = "Louise Strawbridge Artist Portfolio"
   description = "The work of Louise Strawbridge"
+  site = "louisestrawbridge.com"
   [params.author]
     name = "Louise Strawbridge"
     email = "louisestrawbridge@gmail.com"
