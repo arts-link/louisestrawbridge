@@ -184,7 +184,8 @@ figure.artist-image {
 }
 
 .submit-button:hover {
-  background-color: #4a4f55;
+  color:#333;
+  background-color: #0adf6d;
 }
 
 footer section {
@@ -203,7 +204,7 @@ footer section {
   padding-right: 1.5rem; /* px-6 */
   text-align: center;
   font-size: 0.875rem; /* text-sm */
-  color: #4b5563; /* text-neutral-600 */
+  color: #4b6356; /* text-neutral-600 */
 
   a::before {
     content: "|";
