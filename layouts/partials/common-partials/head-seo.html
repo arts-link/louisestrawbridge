@@ -13,9 +13,3 @@
 {{- partial "common-partials/opengraph/opengraph.html" . -}}
 {{- template "_internal/schema.html" . -}}
 {{- partial "common-partials/opengraph/twitter_cards.html" . -}}
-
-{{ with site.Params.plausible_domain }}
-<script defer data-domain="{{ . }}" src="/js/script.hash.outbound-links.tagged-events.js"></script>
-<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
-{{ end }}
-{{ if eq .Kind "404" }} <script>document.addEventListener('DOMContentLoaded', function () { plausible('404', { props: { path: document.location.pathname } }); });</script><script>document.addEventListener('DOMContentLoaded', function () { plausible('404', { props: { path: document.location.pathname } }); });</script> {{ end }}

@@ -5,6 +5,7 @@
 {{- if $domain }}
 <script defer data-domain="louisestrawbridge.com" src="https://plausible.io/js/script.hash.outbound-links.js"></script>
 <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+{{ if eq .Kind "404" }} <script>document.addEventListener('DOMContentLoaded', function () { plausible('404', { props: { path: document.location.pathname } }); });</script><script>document.addEventListener('DOMContentLoaded', function () { plausible('404', { props: { path: document.location.pathname } }); });</script> {{ end }}
 {{- end }}
 {{- if eq .Kind "404" }} {{ if $advanced }} <script>document.addEventListener('DOMContentLoaded', function () { plausible('404', { props: { path: document.location.pathname } }); });</script> {{ end }} {{ end }}
 {{- if .IsHome }}
