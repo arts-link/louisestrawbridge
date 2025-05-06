@@ -44,8 +44,6 @@
       "contact-form__container",
       "form-group",
       "galleries",
-      "gallery",
-      "gallery-item",
       "group",
       "group-aria-expanded:block",
       "group-aria-expanded:hidden",
@@ -56,7 +54,6 @@
     ],
     "ids": [
       "email",
-      "gallery",
       "group-exhibitions",
       "links",
       "louises-biography",
