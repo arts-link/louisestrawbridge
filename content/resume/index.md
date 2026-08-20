@@ -23,6 +23,10 @@ Louise Strawbridge uses a wide range of materials and textures to explore the po
 
 ## GROUP EXHIBITIONS
 
+2026 - [Stanek Gallery](https://www.artsy.net/partner/stanek-gallery/artists/louise-strawbridge), “Word”, Miami, FL  
+2026 - Gravers Lane Gallery, Group Show, Philadelphia, PA – juried  
+2025 - Phillips Mill, “96th Juried Art Show”, New Hope, PA – juried, Phillips Mill Award  
+2025 - Jane Deering Gallery, “Pulp Fiction / Artists’ Books”, Gloucester, MA  
 2017 - [Stanek Gallery](https://www.artsy.net/partner/stanek-gallery/artists/louise-strawbridge), Invitational Summer Exhibition, Philadelphia, PA  
 2016 - The Trenton City Museum, “The Nature of Abstraction,” (catalog), Trenton, NJ - invitational  
 2014 - Bridgette Mayer Gallery, “10 X 10”, Philadelphia, PA - invitational  
