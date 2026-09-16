@@ -1,9 +1,10 @@
 {{ $images := $.Resources.ByType "image" }}
-{{ $featured := resources.Get "/common-partials/opengraph/opengraph-base.png" }}
+{{ $paperBg := resources.Get "/common-partials/opengraph/paper-bg.jpg" }}
+{{ $featured := $paperBg }}
   {{ if gt (len $images) 0 }}
     {{ $featured = index $images 0 }}
   {{ end }}
-  
+
   {{/*  "tight"  */}}
   {{ $resizeTarget := 1200 }}
   {{ if eq .Params.scale "wide" }}
@@ -13,66 +14,72 @@
   {{ else if eq .Params.scale "none" }}
     {{ $resizeTarget = "" }}
   {{ end }}
-  {{ if $resizeTarget }}
+  {{ if and $resizeTarget (gt (len $images) 0) }}
     {{ $featured = $featured.Resize (printf "%dx" $resizeTarget) }}
   {{ end }}
-  
-  {{ $cropAnchor := "" }}
-  {{ if .Params.anchor }}
-      {{ $cropAnchor = printf "1200x630 %s" .Params.anchor }}
-  {{ else }}
-      {{ $cropAnchor = "1200x630" }}
-  {{ end }}
-  {{ $featured = $featured.Crop $cropAnchor }}
 
-  {{/* Title plaque: the site's own header treatment (typewriter font over the
-       signature texture), same look as every page's <hgroup><h1>. */}}
-  {{ $plaqueBg := resources.Get "/common-partials/opengraph/signature-texture.png" }}
-  {{ $titleFont := resources.Get "/common-partials/opengraph/myunderwood.ttf" }}
-  {{/* Only for pages with their own photo — opengraph-base.png (used as a fallback
-       for Home/About/Contact/Resume/Thanks) already has the signature lockup baked
-       in, so the plaque would just duplicate it. */}}
-  {{ if and $plaqueBg $titleFont (gt (len $images) 0) }}
-    {{ $plaqueWidth := 900 }}
-    {{ $plaqueHeight := 171 }}
-    {{ $plaque := $plaqueBg.Resize (printf "%dx%d" $plaqueWidth $plaqueHeight) }}
-    {{ $title := .Title | strings.TrimPrefix "< " | plainify | strings.ToUpper }}
-    {{ $numChars := len $title }}
-    {{ $charWidthRatio := 0.72 }}
-    {{ $maxTextWidth := 780.0 }}
-    {{ $fontSize := 72.0 }}
-    {{ if gt $numChars 0 }}
-      {{ $fitSize := math.Floor (div $maxTextWidth (mul $charWidthRatio (float $numChars))) }}
-      {{ $fontSize = math.Max 28.0 (math.Min 72.0 $fitSize) }}
+  {{ if gt (len $images) 0 }}
+    {{ $cropAnchor := "" }}
+    {{ if .Params.anchor }}
+        {{ $cropAnchor = printf "1200x630 %s" .Params.anchor }}
+    {{ else }}
+        {{ $cropAnchor = "1200x630" }}
     {{ end }}
-    {{ $textWidth := mul (float $numChars) (mul $charWidthRatio $fontSize) }}
-    {{ $plaqueTextOptions := dict
-      "color" "#1a1a1a"
-      "size" $fontSize
-      "x" (div (sub (float $plaqueWidth) $textWidth) 2.0)
-      "y" (div (sub (float $plaqueHeight) $fontSize) 2.0)
-      "font" $titleFont
-    }}
-    {{ $plaque = $plaque | images.Filter (images.Text $title $plaqueTextOptions) }}
-    {{ $overlayX := div (sub $featured.Width $plaqueWidth) 2 }}
-    {{ $featured = $featured | images.Filter (images.Overlay $plaque $overlayX 48) }}
+    {{ $featured = $featured.Crop $cropAnchor }}
+  {{ else }}
+    {{/* No page photo -- fall back to the site's own paper background
+         (same texture as the site body) with the signature lockup as the
+         hero, instead of a separate static base image. */}}
+    {{ $featured = $featured.Resize "1200x630" }}
+    {{ $logo := resources.Get "/common-partials/opengraph/logo-lockup.png" }}
+    {{ if $logo }}
+      {{ $logo = $logo.Resize "620x" }}
+      {{ $logoX := div (sub $featured.Width $logo.Width) 2 }}
+      {{ $logoY := 140 }}
+      {{ $featured = $featured | images.Filter (images.Overlay $logo $logoX $logoY) }}
+    {{ end }}
   {{ end }}
 
-  {{ $description := "" }}
-  {{ with .Site.Params.description }}{{ $description = . }}{{ end }}
-  {{ with .Title }}{{ $description = . | strings.TrimPrefix "< " }}{{ end }}
+  {{/* Title + URL card: one opaque box (the site's paper texture, not the
+       signature graphic -- text crossing the signature strokes was hard to
+       read) so it stays legible over any photo. */}}
+  {{ $cardHeight := 172 }}
+  {{ $card := $paperBg.Resize (printf "1200x%d" $cardHeight) }}
+  {{ $cardPadding := 56 }}
+
+  {{/* Avoid repeating the name on Home, where it's already in the logo lockup above. */}}
+  {{ $title := .Title | default site.Title | strings.TrimPrefix "< " | plainify | strings.ToUpper }}
+  {{ if .IsHome }}
+    {{ $title = site.Params.description | plainify | strings.ToUpper }}
+  {{ end }}
+  {{ $numChars := len $title }}
+  {{ $charWidthRatio := 0.72 }}
+  {{ $maxTextWidth := float (sub 1200 (mul $cardPadding 2)) }}
+  {{ $titleSize := 64.0 }}
+  {{ if gt $numChars 0 }}
+    {{ $fitSize := math.Floor (div $maxTextWidth (mul $charWidthRatio (float $numChars))) }}
+    {{ $titleSize = math.Max 28.0 (math.Min 64.0 $fitSize) }}
+  {{ end }}
+  {{ $titleFont := resources.Get "/common-partials/opengraph/myunderwood.ttf" }}
+  {{ $card = $card | images.Filter (images.Text $title (dict
+    "color" "#2a2a2a"
+    "size" $titleSize
+    "x" $cardPadding
+    "y" 30
+    "font" $titleFont
+  )) }}
+
   {{ $site := .Site.Params.site | default .Site.BaseURL }}
-  {{ $text := printf "%s @ %s" $description $site}}
-  {{ $font := (resources.Get "/common-partials/opengraph/opengraph-font.ttf") }}
-  {{ $textOptions := dict
-    "color" "#FFF"
-    "size" 25
-    "lineSpacing" 10
-    "x" 65 "y" 500 
-    "font" $font
-  }}
-  {{ $featured = $featured | images.Filter (images.Text $text $textOptions) }}
-  
-  
+  {{ $urlFont := resources.Get "/common-partials/opengraph/opengraph-font.ttf" }}
+  {{ $card = $card | images.Filter (images.Text $site (dict
+    "color" "#6b6b6b"
+    "size" 26
+    "x" $cardPadding
+    "y" 122
+    "font" $urlFont
+  )) }}
+
+  {{ $cardY := sub 630 $cardHeight }}
+  {{ $featured = $featured | images.Filter (images.Overlay $card 0 $cardY) }}
 
 {{ return $featured }}
