@@ -10,6 +10,9 @@
 .frontmatter/
 frontmatter.json
 
+# Wrangler
+.wrangler/
+
 # macOS
 .DS_Store
 
