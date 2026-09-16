@@ -15,4 +15,20 @@ hgroup h1 {
   color: transparent;
 }
 </style>
+{{- $artistImage := resources.Get "/images/P1010422.JPG" }}
+{{- $personSchema := dict
+  "@context" "https://schema.org"
+  "@type" "Person"
+  "name" site.Params.author.name
+  "url" (absURL "/")
+  "jobTitle" "Visual Artist"
+  "description" "Louise Strawbridge uses a wide range of materials and textures to explore the possibilities of disturbing qualities in the commonplace."
+  "sameAs" (slice
+    "https://www.artsy.net/artist/louise-strawbridge"
+    "https://www.youtube.com/watch?v=1dw-EzUfTB4"
+    "https://www.inquirer.com/news/philadelphia/broad-street-ministry-mending-clothing-repair-unhoused-homeless-20231218.html"
+  )
+}}
+{{- if $artistImage }}{{ $personSchema = merge $personSchema (dict "image" $artistImage.Permalink) }}{{ end }}
+<script type="application/ld+json">{{ $personSchema | jsonify | safeJS }}</script>
 {{- end }}
