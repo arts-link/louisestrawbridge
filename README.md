@@ -15,7 +15,6 @@
 <p align="center">
   <a href="https://gohugo.io/"><img alt="Built with Hugo" src="https://img.shields.io/badge/built%20with-Hugo-FF4088?style=flat-square&logo=hugo&logoColor=white"></a>
   <a href="https://github.com/nicokaiser/hugo-theme-gallery"><img alt="Gallery theme" src="https://img.shields.io/badge/theme-Gallery-2563EB?style=flat-square&logo=github&logoColor=white"></a>
-  <a href="https://plausible.io/"><img alt="Analytics by Plausible" src="https://img.shields.io/badge/analytics-Plausible-5850EC?style=flat-square&logo=plausibleanalytics&logoColor=white"></a>
 </p>
 
 <p align="center">
