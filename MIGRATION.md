@@ -43,6 +43,11 @@ appear after adding each Custom Domain.
 - `MX @ mx2.improvmx.com` — priority `20`
 - `TXT @ "v=spf1 include:spf.improvmx.com ~all"`
 - `TXT @ "google-site-verification=PmWcdfj5HRe_DNV2nAD13u_W_9ERpcRDiat4zpgNsgk"`
+- `CNAME k2._domainkey → dkim2.mcsv.net` (DNS only, not proxied) — Mailchimp DKIM
+  signing key, found during the Cloudflare DNS import scan (not visible from the repo).
+  Needed for the Mailchimp mailing-list signup on the site to send authenticated email.
+- `CNAME k3._domainkey → dkim3.mcsv.net` (DNS only, not proxied) — second Mailchimp
+  DKIM signing key, same reason as above.
 
 **Remove — but only after the Worker's Custom Domains are confirmed working**
 (step 1.4 already replaces what these did):
