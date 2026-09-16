@@ -25,9 +25,42 @@
   {{ end }}
   {{ $featured = $featured.Crop $cropAnchor }}
 
+  {{/* Title plaque: the site's own header treatment (typewriter font over the
+       signature texture), same look as every page's <hgroup><h1>. */}}
+  {{ $plaqueBg := resources.Get "/common-partials/opengraph/signature-texture.png" }}
+  {{ $titleFont := resources.Get "/common-partials/opengraph/myunderwood.ttf" }}
+  {{/* Only for pages with their own photo — opengraph-base.png (used as a fallback
+       for Home/About/Contact/Resume/Thanks) already has the signature lockup baked
+       in, so the plaque would just duplicate it. */}}
+  {{ if and $plaqueBg $titleFont (gt (len $images) 0) }}
+    {{ $plaqueWidth := 900 }}
+    {{ $plaqueHeight := 171 }}
+    {{ $plaque := $plaqueBg.Resize (printf "%dx%d" $plaqueWidth $plaqueHeight) }}
+    {{ $title := .Title | strings.TrimPrefix "< " | plainify | strings.ToUpper }}
+    {{ $numChars := len $title }}
+    {{ $charWidthRatio := 0.72 }}
+    {{ $maxTextWidth := 780.0 }}
+    {{ $fontSize := 72.0 }}
+    {{ if gt $numChars 0 }}
+      {{ $fitSize := math.Floor (div $maxTextWidth (mul $charWidthRatio (float $numChars))) }}
+      {{ $fontSize = math.Max 28.0 (math.Min 72.0 $fitSize) }}
+    {{ end }}
+    {{ $textWidth := mul (float $numChars) (mul $charWidthRatio $fontSize) }}
+    {{ $plaqueTextOptions := dict
+      "color" "#1a1a1a"
+      "size" $fontSize
+      "x" (div (sub (float $plaqueWidth) $textWidth) 2.0)
+      "y" (div (sub (float $plaqueHeight) $fontSize) 2.0)
+      "font" $titleFont
+    }}
+    {{ $plaque = $plaque | images.Filter (images.Text $title $plaqueTextOptions) }}
+    {{ $overlayX := div (sub $featured.Width $plaqueWidth) 2 }}
+    {{ $featured = $featured | images.Filter (images.Overlay $plaque $overlayX 48) }}
+  {{ end }}
+
   {{ $description := "" }}
   {{ with .Site.Params.description }}{{ $description = . }}{{ end }}
-  {{ with .Title }}{{ $description = . }}{{ end }}
+  {{ with .Title }}{{ $description = . | strings.TrimPrefix "< " }}{{ end }}
   {{ $site := .Site.Params.site | default .Site.BaseURL }}
   {{ $text := printf "%s @ %s" $description $site}}
   {{ $font := (resources.Get "/common-partials/opengraph/opengraph-font.ttf") }}
