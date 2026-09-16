@@ -61,7 +61,8 @@ integration that's no longer in use, per repo owner):
    home page, a few inner pages, images, and a broken link to confirm the 404 page —
    all while GitHub Pages is still live and DNS hasn't moved.
 2. At your domain registrar, switch nameservers from `dns1–5.name-services.com` to
-   the two Cloudflare-assigned nameservers shown on the zone's Overview page.
+   the two Cloudflare-assigned nameservers shown on the zone's Overview page
+   (assigned for this zone: `jessica.ns.cloudflare.com` and `leland.ns.cloudflare.com`).
    **Before switching, confirm DNSSEC is OFF** at the registrar (a DNSSEC record
    pointing at the old nameservers will break resolution once Cloudflare's
    nameservers take over — disable it first, or Cloudflare's own DNSSEC after
