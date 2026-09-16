@@ -1,0 +1,18 @@
+# {{ site.Title }}
+
+> {{ site.Params.description }}
+
+{{ with site.GetPage "/about" }}{{ .Plain | htmlUnescape | htmlUnescape | truncate 500 }}{{ end }}
+
+## Galleries
+
+{{ range site.Sections }}{{ if in (slice "collage" "sculpture" "artistsbooks") .Section }}### {{ .Title }}{{ with .Params.description }} — {{ . }}{{ end }}
+
+{{ range .Pages.ByTitle }}- [{{ .Title }}]({{ .Permalink }})
+{{ end }}
+{{ end }}{{ end -}}
+## Other pages
+
+- [{{ with site.GetPage "/about" }}{{ strings.TrimPrefix "< " .Title }}{{ end }}]({{ (site.GetPage "/about").Permalink }})
+- [{{ (site.GetPage "/resume").Title }}]({{ (site.GetPage "/resume").Permalink }})
+- [{{ (site.GetPage "/contact").Title }}]({{ (site.GetPage "/contact").Permalink }})

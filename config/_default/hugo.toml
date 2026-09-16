@@ -32,9 +32,15 @@ timeZone = "America/New_York"
   #   youtube = "https://youtube.com/yourchannel"
   #   linkedin = "https://linkedin.com/in/yourprofile"    
     
+[outputFormats.LLMS]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  notAlternative = true
+
 [outputs]
   page = ["HTML"]
-  home = ["HTML", "RSS"]
+  home = ["HTML", "RSS", "LLMS"]
   section = ["HTML"]
 
 [imaging]
