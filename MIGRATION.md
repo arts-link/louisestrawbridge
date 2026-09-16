@@ -9,6 +9,16 @@ impressions over the last 12 months were on the apex domain, so apex keeps that 
 history rather than starting over on `www`.) Free plan only, no paid Cloudflare
 features.
 
+**Note on `robots.txt`**: the live file won't match `layouts/robots.txt` in this repo
+verbatim. Cloudflare injects its own managed block at the edge (a
+`Content-Signal: search=yes,ai-train=no,use=reference` line plus `Disallow: /` for a
+long list of named AI-training crawlers — GPTBot, ClaudeBot, Google-Extended, CCBot,
+etc.) on top of whatever the origin serves. This is Cloudflare enforcing the AI bot
+policy chosen during the original "Connect a domain" onboarding (Search = allow,
+Agent = allow, Training = block), not something to "fix" in the repo. It doesn't
+conflict with the repo's own `Sitemap:` line — that's still present in the response,
+just further down the file.
+
 ## 1. Cloudflare setup (done)
 
 1. Zone added in Cloudflare (Free plan).
