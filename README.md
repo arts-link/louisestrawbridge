@@ -33,8 +33,8 @@ hugo serveer --disableFastRender # enable for full rebuilds on change
 The site is deployed as a static-assets Cloudflare Worker (`wrangler.jsonc`,
 `assets.directory` pointing at Hugo's `public/` output).
 
-- Preview the built site the way it will actually be served (clean URLs, `_redirects`,
-  the 404 page), after running a Hugo build:
+- Preview the built site the way it will actually be served (clean URLs, the 404
+  page), after running a Hugo build:
 ```bash
 hugo --gc --minify
 npx wrangler dev

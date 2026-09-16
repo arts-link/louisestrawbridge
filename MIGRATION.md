@@ -28,6 +28,21 @@ redirects to `www`). Free plan only, no paid Cloudflare features.
    Cloudflare will create/adjust the necessary DNS records automatically when you add
    each Custom Domain (this is what replaces the GitHub Pages A/CNAME records — see
    below).
+5. Create the apex → www redirect as a **Redirect Rule** (not a `_redirects` file —
+   Cloudflare's `_redirects` for Workers static assets only supports relative-path
+   rules, it rejects a rule that redirects one hostname to another). In the zone's
+   dashboard: **Rules → Redirect Rules → Create rule**:
+   - Rule name: `apex to www`
+   - When incoming requests match: **Custom filter expression** →
+     `(http.host eq "louisestrawbridge.com")`
+   - Then: **Dynamic**, expression:
+     `concat("https://www.louisestrawbridge.com", http.request.uri.path, http.request.uri.query == "" ? "" : concat("?", http.request.uri.query))`
+     (or use the **Static** redirect option with target URL
+     `https://www.louisestrawbridge.com/` and check **Preserve query string** if you'd
+     rather not deal with the expression editor — the dynamic version additionally
+     preserves the request path, which the static option does not)
+   - Status code: **301**
+   This is a Free-plan feature (Redirect Rules are part of the free Rulesets engine).
 
 ## 2. DNS records in Cloudflare
 
@@ -73,6 +88,8 @@ integration that's no longer in use, per repo owner):
 5. Test:
    - `https://www.louisestrawbridge.com/` loads the site
    - `https://louisestrawbridge.com/` redirects (301) to `https://www.louisestrawbridge.com/`
+     (via the Redirect Rule from step 1.5 — test an inner path too, e.g.
+     `https://louisestrawbridge.com/about/`, to confirm the path is preserved)
    - HTTPS has a valid certificate on both hostnames (Cloudflare issues this
      automatically for Custom Domains, usually within minutes)
    - Send a test email to an address at the domain and confirm it still forwards via
@@ -86,8 +103,9 @@ If something goes wrong after the nameserver switch:
 2. GitHub Pages was never disabled during this migration, so once DNS propagates back,
    the site resolves through Pages again exactly as before.
 3. No repo changes need reverting — the Cloudflare-specific files
-   (`wrangler.jsonc`, `static/_redirects`, `deploy-cloudflare.yml`) are inert unless
-   DNS points at Cloudflare.
+   (`wrangler.jsonc`, `deploy-cloudflare.yml`) are inert unless DNS points at
+   Cloudflare. The Redirect Rule (step 1.5) is dashboard config, not a repo file —
+   nothing to revert there either, it just won't matter once DNS points elsewhere.
 
 ## 5. Post-cutover cleanup (only after the new setup is confirmed stable)
 
