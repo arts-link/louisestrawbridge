@@ -1,12 +1,16 @@
 {
   "private": "true",
   "scripts": {
-    "build": "hugo --gc --minify",
+    "og:generate": "node scripts/generate-og-images.mjs",
+    "build": "npm run og:generate && hugo --gc --minify",
     "dev": "hugo server",
     "preview": "wrangler dev",
     "deploy": "wrangler deploy"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "satori": "^0.33.4",
+    "sharp": "^0.35.4",
     "wrangler": "^4.132.0"
   }
 }

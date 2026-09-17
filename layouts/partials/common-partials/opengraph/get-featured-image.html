@@ -1,85 +1,15 @@
-{{ $images := $.Resources.ByType "image" }}
-{{ $paperBg := resources.Get "/common-partials/opengraph/paper-bg.jpg" }}
-{{ $featured := $paperBg }}
-  {{ if gt (len $images) 0 }}
-    {{ $featured = index $images 0 }}
-  {{ end }}
-
-  {{/*  "tight"  */}}
-  {{ $resizeTarget := 1200 }}
-  {{ if eq .Params.scale "wide" }}
-    {{ $resizeTarget = 1920 }}
-  {{ else if eq .Params.scale "medium" }}
-    {{ $resizeTarget = 1600 }}
-  {{ else if eq .Params.scale "none" }}
-    {{ $resizeTarget = "" }}
-  {{ end }}
-  {{ if and $resizeTarget (gt (len $images) 0) }}
-    {{ $featured = $featured.Resize (printf "%dx" $resizeTarget) }}
-  {{ end }}
-
-  {{ if gt (len $images) 0 }}
-    {{ $cropAnchor := "" }}
-    {{ if .Params.anchor }}
-        {{ $cropAnchor = printf "1200x630 %s" .Params.anchor }}
-    {{ else }}
-        {{ $cropAnchor = "1200x630" }}
-    {{ end }}
-    {{ $featured = $featured.Crop $cropAnchor }}
-  {{ else }}
-    {{/* No page photo -- fall back to the site's own paper background
-         (same texture as the site body) with the signature lockup as the
-         hero, instead of a separate static base image. */}}
-    {{ $featured = $featured.Resize "1200x630" }}
-    {{ $logo := resources.Get "/common-partials/opengraph/logo-lockup.png" }}
-    {{ if $logo }}
-      {{ $logo = $logo.Resize "620x" }}
-      {{ $logoX := div (sub $featured.Width $logo.Width) 2 }}
-      {{ $logoY := 140 }}
-      {{ $featured = $featured | images.Filter (images.Overlay $logo $logoX $logoY) }}
-    {{ end }}
-  {{ end }}
-
-  {{/* Title + URL card: one opaque box (the site's paper texture, not the
-       signature graphic -- text crossing the signature strokes was hard to
-       read) so it stays legible over any photo. */}}
-  {{ $cardHeight := 172 }}
-  {{ $card := $paperBg.Resize (printf "1200x%d" $cardHeight) }}
-  {{ $cardPadding := 56 }}
-
-  {{/* Avoid repeating the name on Home, where it's already in the logo lockup above. */}}
-  {{ $title := .Title | default site.Title | strings.TrimPrefix "< " | plainify | strings.ToUpper }}
-  {{ if .IsHome }}
-    {{ $title = site.Params.description | plainify | strings.ToUpper }}
-  {{ end }}
-  {{ $numChars := len $title }}
-  {{ $charWidthRatio := 0.72 }}
-  {{ $maxTextWidth := float (sub 1200 (mul $cardPadding 2)) }}
-  {{ $titleSize := 64.0 }}
-  {{ if gt $numChars 0 }}
-    {{ $fitSize := math.Floor (div $maxTextWidth (mul $charWidthRatio (float $numChars))) }}
-    {{ $titleSize = math.Max 28.0 (math.Min 64.0 $fitSize) }}
-  {{ end }}
-  {{ $titleFont := resources.Get "/common-partials/opengraph/myunderwood.ttf" }}
-  {{ $card = $card | images.Filter (images.Text $title (dict
-    "color" "#2a2a2a"
-    "size" $titleSize
-    "x" $cardPadding
-    "y" 30
-    "font" $titleFont
-  )) }}
-
-  {{ $site := .Site.Params.site | default .Site.BaseURL }}
-  {{ $urlFont := resources.Get "/common-partials/opengraph/opengraph-font.ttf" }}
-  {{ $card = $card | images.Filter (images.Text $site (dict
-    "color" "#6b6b6b"
-    "size" 26
-    "x" $cardPadding
-    "y" 122
-    "font" $urlFont
-  )) }}
-
-  {{ $cardY := sub 630 $cardHeight }}
-  {{ $featured = $featured | images.Filter (images.Overlay $card 0 $cardY) }}
-
-{{ return $featured }}
+{{/* OG/social images are pre-rendered from real HTML+CSS via Satori
+     (scripts/generate-og-images.mjs, run before `hugo build`) rather than
+     composited here -- Hugo's own image pipeline can't draw rounded rects or
+     center things reliably. This just looks up the file matching this page's
+     URL. */}}
+{{ $urlPath := strings.TrimSuffix "/" (strings.TrimPrefix "/" .RelPermalink) }}
+{{ $slug := "home" }}
+{{ if ne $urlPath "" }}
+  {{ $slug = replace $urlPath "/" "-" }}
+{{ end }}
+{{ $og := resources.Get (printf "/generated/og/%s.jpg" $slug) }}
+{{ if not $og }}
+  {{ $og = resources.Get "/common-partials/opengraph/opengraph-base.png" }}
+{{ end }}
+{{ return $og }}

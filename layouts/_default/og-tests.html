@@ -1,0 +1,11 @@
+{{ define "main" }}
+  {{ partial "title.html" . }}
+  <div style="display: grid; grid-template-columns: 1fr; gap: 32px; max-width: 900px; margin: 0 auto; padding: 24px;">
+    {{ range .Params.items }}
+      <figure style="margin: 0;">
+        <img src="/generated/og/{{ .slug }}.jpg" alt="{{ .label }}" style="width: 100%; height: auto; display: block; border: 1px solid #ccc;" />
+        <figcaption style="margin-top: 8px; font-family: monospace;">{{ .label }}</figcaption>
+      </figure>
+    {{ end }}
+  </div>
+{{ end }}

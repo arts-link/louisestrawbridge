@@ -6,6 +6,9 @@
 /_ignore/
 /node_modules
 
+# Generated OG/social images (scripts/generate-og-images.mjs)
+/assets/generated/
+
 # frontmatter
 .frontmatter/
 frontmatter.json
