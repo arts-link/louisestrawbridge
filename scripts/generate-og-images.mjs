@@ -130,6 +130,9 @@ async function main() {
   const archivo600 = fs.readFileSync(path.join(fontDir, "archivo-600.ttf"));
   const instrumentSerif = fs.readFileSync(path.join(fontDir, "instrument-serif-400.ttf"));
 
+  const paperBgUri = toDataUri(path.join(ROOT, "static", "images", "img_bg.jpg"));
+  const logoUri = toDataUri(path.join(ROOT, "static", "images", "louisestrawbridge.png"));
+
   fs.mkdirSync(OUT_DIR, { recursive: true });
 
   const pages = collectPages();
@@ -156,6 +159,48 @@ async function main() {
             objectFit: "cover",
             objectPosition: "center",
           },
+        },
+      });
+    } else {
+      // No page photo: the site's own paper texture + signature/name/tagline
+      // lockup as the hero, same as before this redesign.
+      children.push({
+        type: "img",
+        props: {
+          src: paperBgUri,
+          style: {
+            position: "absolute",
+            inset: 0,
+            width: CANVAS_W,
+            height: CANVAS_H,
+            objectFit: "cover",
+          },
+        },
+      });
+      children.push({
+        type: "div",
+        props: {
+          style: {
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: CANVAS_W,
+            height: CANVAS_H,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          },
+          children: [
+            {
+              type: "img",
+              props: {
+                src: logoUri,
+                // Satori needs explicit numeric dimensions -- no intrinsic
+                // sizing / "auto". Logo is 586x193.
+                style: { width: 620, height: 204 },
+              },
+            },
+          ],
         },
       });
     }
