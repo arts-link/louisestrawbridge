@@ -55,7 +55,8 @@ function slugFromUrl(url) {
 // permalinks are configured), so recursing content/ gives the same structure
 // Hugo would build.
 function walk(dir, urlPrefix, pages, sectionTitle) {
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+  const entries = fs.readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name));
+  for (const entry of entries) {
     // Hugo lowercases URLs by default (disablePathToLower is not set), but
     // content directory/file names on disk aren't necessarily lowercase --
     // use the real filesystem name for I/O, the lowercased name for URLs.
@@ -75,14 +76,21 @@ function walk(dir, urlPrefix, pages, sectionTitle) {
         });
       } else if (fs.existsSync(sectionIndex)) {
         const title = readFrontMatterTitle(sectionIndex);
+        const childPages = [];
+        walk(sub, `${urlPrefix}/${urlName}`, childPages, isGallerySection ? title : sectionTitle);
+        // Section index pages (e.g. /sculpture/) have no photo of their own --
+        // the photos live one level down, in each gallery subfolder. Borrow
+        // the first sub-gallery's first photo instead of falling back to the
+        // no-image paper background.
+        const firstChildWithImage = childPages.find((p) => p.images.length > 0);
         pages.push({
           url: `${urlPrefix}/${urlName}/`,
           title,
           section: isGallerySection ? title : sectionTitle,
-          images: [],
-          dir: sub,
+          images: firstChildWithImage ? firstChildWithImage.images : [],
+          dir: firstChildWithImage ? firstChildWithImage.dir : sub,
         });
-        walk(sub, `${urlPrefix}/${urlName}`, pages, isGallerySection ? title : sectionTitle);
+        pages.push(...childPages);
       } else {
         walk(sub, `${urlPrefix}/${urlName}`, pages, sectionTitle);
       }
